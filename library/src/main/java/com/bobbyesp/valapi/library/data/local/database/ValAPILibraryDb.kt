@@ -16,10 +16,18 @@ import com.bobbyesp.valapi.library.data.local.database.entity.ContentTierEntity
 import com.bobbyesp.valapi.library.data.local.database.entity.ContentTypeConverters
 import com.bobbyesp.valapi.library.data.local.database.entity.ContractEntity
 import com.bobbyesp.valapi.library.data.local.database.entity.CurrencyEntity
+import com.bobbyesp.valapi.library.data.local.database.entity.EquippableEntity
+import com.bobbyesp.valapi.library.data.local.database.entity.EventEntity
+import com.bobbyesp.valapi.library.data.local.database.entity.GamemodeEntity
+import com.bobbyesp.valapi.library.data.local.database.entity.GearEntity
 import com.bobbyesp.valapi.library.domain.model.agent.AbilityTypeConverter
 import com.bobbyesp.valapi.library.domain.model.agent.RoleTypeConverters
 import com.bobbyesp.valapi.library.domain.model.agent.VoiceLineTypeConverter
 import com.bobbyesp.valapi.library.domain.model.buddies.levels.BuddyLevelTypeConverters
+import com.bobbyesp.valapi.library.domain.model.gamemodes.GameFeatureOverrideTypeConverters
+import com.bobbyesp.valapi.library.domain.model.gamemodes.GameRuleBoolOverrideTypeConverters
+import com.bobbyesp.valapi.library.domain.model.gear.GearTypeConverters
+import com.bobbyesp.valapi.library.domain.model.gear.ShopDataTypeConverters
 
 @Database(
     entities = [
@@ -31,7 +39,11 @@ import com.bobbyesp.valapi.library.domain.model.buddies.levels.BuddyLevelTypeCon
         CompetitiveTierEntity::class,
         ContentTierEntity::class,
         ContractEntity::class,
-        CurrencyEntity::class
+        CurrencyEntity::class,
+        EquippableEntity::class,
+        EventEntity::class,
+        GamemodeEntity::class,
+        GearEntity::class
     ],
     version = 1
 )
@@ -41,7 +53,11 @@ import com.bobbyesp.valapi.library.domain.model.buddies.levels.BuddyLevelTypeCon
     RoleTypeConverters::class,
     VoiceLineTypeConverter::class,
     BuddyLevelTypeConverters::class,
-    ContentTypeConverters::class
+    ContentTypeConverters::class,
+    GameFeatureOverrideTypeConverters::class,
+    GearTypeConverters::class,
+    GameRuleBoolOverrideTypeConverters::class,
+    ShopDataTypeConverters::class
 )
 abstract class ValAPILibraryDb : RoomDatabase() {
     abstract fun agentDao(): AgentDao

@@ -1,10 +1,13 @@
 
-import com.bobbyesp.valapi.library.domain.model.contracts.Content
+import com.bobbyesp.valapi.library.domain.model.gamemodes.GameFeatureOverride
+import com.bobbyesp.valapi.library.domain.model.gamemodes.GameRuleBoolOverride
+import com.bobbyesp.valapi.library.domain.model.gear.Gear
+import com.bobbyesp.valapi.library.domain.model.gear.ShopData
 import java.io.File
 import kotlin.reflect.KClass
 
 fun main() {
-    val classesToGenerate = listOf(Content::class)
+    val classesToGenerate = listOf(ShopData::class)
 
     for (clazz in classesToGenerate) {
         generateTypeConverter(clazz)
