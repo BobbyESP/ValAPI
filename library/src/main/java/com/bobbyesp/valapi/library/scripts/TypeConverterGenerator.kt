@@ -1,13 +1,20 @@
 
+import com.bobbyesp.valapi.library.data.local.database.entity.SprayLevelEntity
 import com.bobbyesp.valapi.library.domain.model.gamemodes.GameFeatureOverride
 import com.bobbyesp.valapi.library.domain.model.gamemodes.GameRuleBoolOverride
 import com.bobbyesp.valapi.library.domain.model.gear.Gear
 import com.bobbyesp.valapi.library.domain.model.gear.ShopData
+import com.bobbyesp.valapi.library.domain.model.maps.Callout
+import com.bobbyesp.valapi.library.domain.model.seasons.competitive.Border
+import com.bobbyesp.valapi.library.domain.model.weapons.SkinLevel
+import com.bobbyesp.valapi.library.domain.model.weapons.WeaponStats
+import com.bobbyesp.valapi.library.domain.model.weapons.skins.WeaponSkin
+import com.bobbyesp.valapi.library.domain.model.weapons.skins.chromas.Chroma
 import java.io.File
 import kotlin.reflect.KClass
 
 fun main() {
-    val classesToGenerate = listOf(ShopData::class)
+    val classesToGenerate = listOf(Callout::class, Border::class, SprayLevelEntity::class, WeaponSkin::class, WeaponStats::class, Chroma::class, SkinLevel::class)
 
     for (clazz in classesToGenerate) {
         generateTypeConverter(clazz)

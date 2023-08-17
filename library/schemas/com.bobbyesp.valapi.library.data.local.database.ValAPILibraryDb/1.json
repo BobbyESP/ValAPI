@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "cfa7624cd75d8deec6d591ec95da373b",
+    "identityHash": "a0a1b87ffd2074de86d2e9a065e6756f",
     "entities": [
       {
         "tableName": "agents",
@@ -795,12 +795,906 @@
         },
         "indices": [],
         "foreignKeys": []
+      },
+      {
+        "tableName": "gears",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`assetPath` TEXT NOT NULL, `description` TEXT NOT NULL, `displayIcon` TEXT NOT NULL, `displayName` TEXT NOT NULL, `shopData` TEXT NOT NULL, `uuid` TEXT NOT NULL, PRIMARY KEY(`uuid`))",
+        "fields": [
+          {
+            "fieldPath": "assetPath",
+            "columnName": "assetPath",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "description",
+            "columnName": "description",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "displayIcon",
+            "columnName": "displayIcon",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "displayName",
+            "columnName": "displayName",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "shopData",
+            "columnName": "shopData",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "uuid",
+            "columnName": "uuid",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "uuid"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "level_borders",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`assetPath` TEXT NOT NULL, `levelNumberAppearance` TEXT NOT NULL, `smallPlayerCardAppearance` TEXT NOT NULL, `startingLevel` INTEGER NOT NULL, `uuid` TEXT NOT NULL, PRIMARY KEY(`uuid`))",
+        "fields": [
+          {
+            "fieldPath": "assetPath",
+            "columnName": "assetPath",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "levelNumberAppearance",
+            "columnName": "levelNumberAppearance",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "smallPlayerCardAppearance",
+            "columnName": "smallPlayerCardAppearance",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "startingLevel",
+            "columnName": "startingLevel",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "uuid",
+            "columnName": "uuid",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "uuid"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "maps",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`assetPath` TEXT NOT NULL, `callouts` TEXT, `coordinates` TEXT, `displayIcon` TEXT, `displayName` TEXT NOT NULL, `listViewIcon` TEXT NOT NULL, `mapUrl` TEXT NOT NULL, `splash` TEXT NOT NULL, `uuid` TEXT NOT NULL, `xMultiplier` REAL NOT NULL, `xScalarToAdd` REAL NOT NULL, `yMultiplier` REAL NOT NULL, `yScalarToAdd` REAL NOT NULL, PRIMARY KEY(`uuid`))",
+        "fields": [
+          {
+            "fieldPath": "assetPath",
+            "columnName": "assetPath",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "callouts",
+            "columnName": "callouts",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "coordinates",
+            "columnName": "coordinates",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "displayIcon",
+            "columnName": "displayIcon",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "displayName",
+            "columnName": "displayName",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "listViewIcon",
+            "columnName": "listViewIcon",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "mapUrl",
+            "columnName": "mapUrl",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "splash",
+            "columnName": "splash",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "uuid",
+            "columnName": "uuid",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "xMultiplier",
+            "columnName": "xMultiplier",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "xScalarToAdd",
+            "columnName": "xScalarToAdd",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "yMultiplier",
+            "columnName": "yMultiplier",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "yScalarToAdd",
+            "columnName": "yScalarToAdd",
+            "affinity": "REAL",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "uuid"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "player_cards",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`assetPath` TEXT NOT NULL, `displayIcon` TEXT NOT NULL, `displayName` TEXT NOT NULL, `isHiddenIfNotOwned` INTEGER NOT NULL, `largeArt` TEXT NOT NULL, `smallArt` TEXT NOT NULL, `themeUuid` TEXT, `uuid` TEXT NOT NULL, `wideArt` TEXT NOT NULL, PRIMARY KEY(`uuid`))",
+        "fields": [
+          {
+            "fieldPath": "assetPath",
+            "columnName": "assetPath",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "displayIcon",
+            "columnName": "displayIcon",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "displayName",
+            "columnName": "displayName",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isHiddenIfNotOwned",
+            "columnName": "isHiddenIfNotOwned",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "largeArt",
+            "columnName": "largeArt",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "smallArt",
+            "columnName": "smallArt",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "themeUuid",
+            "columnName": "themeUuid",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "uuid",
+            "columnName": "uuid",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "wideArt",
+            "columnName": "wideArt",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "uuid"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "player_titles",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`assetPath` TEXT NOT NULL, `displayName` TEXT, `isHiddenIfNotOwned` INTEGER NOT NULL, `titleText` TEXT, `uuid` TEXT NOT NULL, PRIMARY KEY(`uuid`))",
+        "fields": [
+          {
+            "fieldPath": "assetPath",
+            "columnName": "assetPath",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "displayName",
+            "columnName": "displayName",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "isHiddenIfNotOwned",
+            "columnName": "isHiddenIfNotOwned",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "titleText",
+            "columnName": "titleText",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "uuid",
+            "columnName": "uuid",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "uuid"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "seasons",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`assetPath` TEXT NOT NULL, `displayName` TEXT NOT NULL, `endTime` TEXT NOT NULL, `parentUuid` TEXT, `startTime` TEXT NOT NULL, `type` TEXT, `uuid` TEXT NOT NULL, PRIMARY KEY(`uuid`))",
+        "fields": [
+          {
+            "fieldPath": "assetPath",
+            "columnName": "assetPath",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "displayName",
+            "columnName": "displayName",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "endTime",
+            "columnName": "endTime",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "parentUuid",
+            "columnName": "parentUuid",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "startTime",
+            "columnName": "startTime",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "type",
+            "columnName": "type",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "uuid",
+            "columnName": "uuid",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "uuid"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "competitive_seasons",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`assetPath` TEXT NOT NULL, `borders` TEXT, `competitiveTiersUuid` TEXT NOT NULL, `endTime` TEXT NOT NULL, `seasonUuid` TEXT NOT NULL, `startTime` TEXT NOT NULL, `uuid` TEXT NOT NULL, PRIMARY KEY(`uuid`))",
+        "fields": [
+          {
+            "fieldPath": "assetPath",
+            "columnName": "assetPath",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "borders",
+            "columnName": "borders",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "competitiveTiersUuid",
+            "columnName": "competitiveTiersUuid",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "endTime",
+            "columnName": "endTime",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "seasonUuid",
+            "columnName": "seasonUuid",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "startTime",
+            "columnName": "startTime",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "uuid",
+            "columnName": "uuid",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "uuid"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "sprays",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`animationGif` TEXT, `animationPng` TEXT, `assetPath` TEXT NOT NULL, `category` TEXT, `displayIcon` TEXT NOT NULL, `displayName` TEXT NOT NULL, `fullIcon` TEXT, `fullTransparentIcon` TEXT, `isNullSpray` INTEGER NOT NULL, `levels` TEXT NOT NULL, `themeUuid` TEXT, `uuid` TEXT NOT NULL, PRIMARY KEY(`uuid`))",
+        "fields": [
+          {
+            "fieldPath": "animationGif",
+            "columnName": "animationGif",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "animationPng",
+            "columnName": "animationPng",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "assetPath",
+            "columnName": "assetPath",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "category",
+            "columnName": "category",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "displayIcon",
+            "columnName": "displayIcon",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "displayName",
+            "columnName": "displayName",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "fullIcon",
+            "columnName": "fullIcon",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "fullTransparentIcon",
+            "columnName": "fullTransparentIcon",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "isNullSpray",
+            "columnName": "isNullSpray",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "levels",
+            "columnName": "levels",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "themeUuid",
+            "columnName": "themeUuid",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "uuid",
+            "columnName": "uuid",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "uuid"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "spray_levels",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`assetPath` TEXT NOT NULL, `displayIcon` TEXT, `displayName` TEXT NOT NULL, `sprayLevel` INTEGER NOT NULL, `uuid` TEXT NOT NULL, PRIMARY KEY(`uuid`))",
+        "fields": [
+          {
+            "fieldPath": "assetPath",
+            "columnName": "assetPath",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "displayIcon",
+            "columnName": "displayIcon",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "displayName",
+            "columnName": "displayName",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sprayLevel",
+            "columnName": "sprayLevel",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "uuid",
+            "columnName": "uuid",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "uuid"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "themes",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`assetPath` TEXT NOT NULL, `displayIcon` TEXT, `displayName` TEXT NOT NULL, `storeFeaturedImage` TEXT, `uuid` TEXT NOT NULL, PRIMARY KEY(`uuid`))",
+        "fields": [
+          {
+            "fieldPath": "assetPath",
+            "columnName": "assetPath",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "displayIcon",
+            "columnName": "displayIcon",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "displayName",
+            "columnName": "displayName",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "storeFeaturedImage",
+            "columnName": "storeFeaturedImage",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "uuid",
+            "columnName": "uuid",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "uuid"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "versions",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`branch` TEXT NOT NULL, `buildDate` TEXT NOT NULL, `buildVersion` TEXT NOT NULL, `engineVersion` TEXT NOT NULL, `manifestId` TEXT NOT NULL, `riotClientBuild` TEXT NOT NULL, `riotClientVersion` TEXT NOT NULL, `version` TEXT NOT NULL, PRIMARY KEY(`manifestId`))",
+        "fields": [
+          {
+            "fieldPath": "branch",
+            "columnName": "branch",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "buildDate",
+            "columnName": "buildDate",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "buildVersion",
+            "columnName": "buildVersion",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "engineVersion",
+            "columnName": "engineVersion",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "manifestId",
+            "columnName": "manifestId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "riotClientBuild",
+            "columnName": "riotClientBuild",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "riotClientVersion",
+            "columnName": "riotClientVersion",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "version",
+            "columnName": "version",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "manifestId"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "weapons",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`assetPath` TEXT NOT NULL, `category` TEXT NOT NULL, `defaultSkinUuid` TEXT NOT NULL, `displayIcon` TEXT NOT NULL, `displayName` TEXT NOT NULL, `killStreamIcon` TEXT NOT NULL, `shopData` TEXT, `skins` TEXT NOT NULL, `uuid` TEXT NOT NULL, `weaponStats` TEXT, PRIMARY KEY(`uuid`))",
+        "fields": [
+          {
+            "fieldPath": "assetPath",
+            "columnName": "assetPath",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "category",
+            "columnName": "category",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "defaultSkinUuid",
+            "columnName": "defaultSkinUuid",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "displayIcon",
+            "columnName": "displayIcon",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "displayName",
+            "columnName": "displayName",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "killStreamIcon",
+            "columnName": "killStreamIcon",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "shopData",
+            "columnName": "shopData",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "skins",
+            "columnName": "skins",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "uuid",
+            "columnName": "uuid",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "weaponStats",
+            "columnName": "weaponStats",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "uuid"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "weapon_skins",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`assetPath` TEXT NOT NULL, `chromas` TEXT NOT NULL, `contentTierUuid` TEXT, `displayIcon` TEXT, `displayName` TEXT NOT NULL, `levels` TEXT NOT NULL, `themeUuid` TEXT NOT NULL, `uuid` TEXT NOT NULL, `wallpaper` TEXT, PRIMARY KEY(`uuid`))",
+        "fields": [
+          {
+            "fieldPath": "assetPath",
+            "columnName": "assetPath",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "chromas",
+            "columnName": "chromas",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "contentTierUuid",
+            "columnName": "contentTierUuid",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "displayIcon",
+            "columnName": "displayIcon",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "displayName",
+            "columnName": "displayName",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "levels",
+            "columnName": "levels",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "themeUuid",
+            "columnName": "themeUuid",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "uuid",
+            "columnName": "uuid",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "wallpaper",
+            "columnName": "wallpaper",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "uuid"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "weapon_skins_chromas",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`assetPath` TEXT NOT NULL, `displayIcon` TEXT, `displayName` TEXT NOT NULL, `fullRender` TEXT NOT NULL, `streamedVideo` TEXT, `swatch` TEXT, `uuid` TEXT NOT NULL, PRIMARY KEY(`uuid`))",
+        "fields": [
+          {
+            "fieldPath": "assetPath",
+            "columnName": "assetPath",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "displayIcon",
+            "columnName": "displayIcon",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "displayName",
+            "columnName": "displayName",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "fullRender",
+            "columnName": "fullRender",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "streamedVideo",
+            "columnName": "streamedVideo",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "swatch",
+            "columnName": "swatch",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "uuid",
+            "columnName": "uuid",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "uuid"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "weapon_skins_levels",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`assetPath` TEXT NOT NULL, `displayIcon` TEXT, `displayName` TEXT NOT NULL, `levelItem` TEXT, `streamedVideo` TEXT, `uuid` TEXT NOT NULL, PRIMARY KEY(`uuid`))",
+        "fields": [
+          {
+            "fieldPath": "assetPath",
+            "columnName": "assetPath",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "displayIcon",
+            "columnName": "displayIcon",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "displayName",
+            "columnName": "displayName",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "levelItem",
+            "columnName": "levelItem",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "streamedVideo",
+            "columnName": "streamedVideo",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "uuid",
+            "columnName": "uuid",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "uuid"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
       }
     ],
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'cfa7624cd75d8deec6d591ec95da373b')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'a0a1b87ffd2074de86d2e9a065e6756f')"
     ]
   }
 }

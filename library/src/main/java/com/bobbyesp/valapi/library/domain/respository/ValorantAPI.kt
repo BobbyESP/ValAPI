@@ -45,7 +45,7 @@ import com.bobbyesp.valapi.library.domain.model.themes.Theme
 import com.bobbyesp.valapi.library.domain.model.themes.Themes
 import com.bobbyesp.valapi.library.domain.model.version.Version
 import com.bobbyesp.valapi.library.domain.model.weapons.Weapon
-import com.bobbyesp.valapi.library.domain.model.weapons.WeaponLevel
+import com.bobbyesp.valapi.library.domain.model.weapons.SkinLevel
 import com.bobbyesp.valapi.library.domain.model.weapons.Weapons
 import com.bobbyesp.valapi.library.domain.model.weapons.skins.WeaponSkin
 import com.bobbyesp.valapi.library.domain.model.weapons.skins.WeaponSkins
@@ -311,12 +311,12 @@ interface ValorantAPI {
 
     suspend fun getWeaponSkinLevels(
         language: LanguageCode = LanguageCode.ENGLISH_US
-    ): List<WeaponLevel>
+    ): List<SkinLevel>
 
     suspend fun getWeaponSkinLevelByUuid(
         language: LanguageCode = LanguageCode.ENGLISH_US,
         uuid: String
-    ): WeaponLevel
+    ): SkinLevel
 
     // -------------- VERSION -------------
     suspend fun getVersion(): Version

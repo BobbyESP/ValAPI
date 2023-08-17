@@ -44,7 +44,7 @@ import com.bobbyesp.valapi.library.domain.model.themes.Theme
 import com.bobbyesp.valapi.library.domain.model.themes.Themes
 import com.bobbyesp.valapi.library.domain.model.version.Version
 import com.bobbyesp.valapi.library.domain.model.weapons.Weapon
-import com.bobbyesp.valapi.library.domain.model.weapons.WeaponLevel
+import com.bobbyesp.valapi.library.domain.model.weapons.SkinLevel
 import com.bobbyesp.valapi.library.domain.model.weapons.Weapons
 import com.bobbyesp.valapi.library.domain.model.weapons.skins.WeaponSkin
 import com.bobbyesp.valapi.library.domain.model.weapons.skins.WeaponSkins
@@ -630,7 +630,7 @@ class ValorantApiImpl(
         )
     }
 
-    override suspend fun getWeaponSkinLevels(language: LanguageCode): List<WeaponLevel> {
+    override suspend fun getWeaponSkinLevels(language: LanguageCode): List<SkinLevel> {
         val params = mutableMapOf<String, String>()
         params["language"] = language.toString()
 
@@ -644,7 +644,7 @@ class ValorantApiImpl(
     override suspend fun getWeaponSkinLevelByUuid(
         language: LanguageCode,
         uuid: String
-    ): WeaponLevel {
+    ): SkinLevel {
         val params = mutableMapOf<String, String>()
         params["language"] = language.toString()
         return makeApiCall(

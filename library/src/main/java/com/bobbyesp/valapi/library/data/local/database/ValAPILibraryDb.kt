@@ -11,6 +11,8 @@ import com.bobbyesp.valapi.library.data.local.database.entity.BuddyEntity
 import com.bobbyesp.valapi.library.data.local.database.entity.BuddyLevelEntity
 import com.bobbyesp.valapi.library.data.local.database.entity.BundleEntity
 import com.bobbyesp.valapi.library.data.local.database.entity.CeremonyEntity
+import com.bobbyesp.valapi.library.data.local.database.entity.ChromaEntity
+import com.bobbyesp.valapi.library.data.local.database.entity.CompetitiveSeasonEntity
 import com.bobbyesp.valapi.library.data.local.database.entity.CompetitiveTierEntity
 import com.bobbyesp.valapi.library.data.local.database.entity.ContentTierEntity
 import com.bobbyesp.valapi.library.data.local.database.entity.ContentTypeConverters
@@ -20,6 +22,19 @@ import com.bobbyesp.valapi.library.data.local.database.entity.EquippableEntity
 import com.bobbyesp.valapi.library.data.local.database.entity.EventEntity
 import com.bobbyesp.valapi.library.data.local.database.entity.GamemodeEntity
 import com.bobbyesp.valapi.library.data.local.database.entity.GearEntity
+import com.bobbyesp.valapi.library.data.local.database.entity.LevelBorderEntity
+import com.bobbyesp.valapi.library.data.local.database.entity.MapEntity
+import com.bobbyesp.valapi.library.data.local.database.entity.PlayerCardEntity
+import com.bobbyesp.valapi.library.data.local.database.entity.PlayerTitleEntity
+import com.bobbyesp.valapi.library.data.local.database.entity.SeasonEntity
+import com.bobbyesp.valapi.library.data.local.database.entity.SkinLevelEntity
+import com.bobbyesp.valapi.library.data.local.database.entity.SprayEntity
+import com.bobbyesp.valapi.library.data.local.database.entity.SprayLevelEntity
+import com.bobbyesp.valapi.library.data.local.database.entity.SprayLevelEntityTypeConverters
+import com.bobbyesp.valapi.library.data.local.database.entity.ThemeEntity
+import com.bobbyesp.valapi.library.data.local.database.entity.VersionEntity
+import com.bobbyesp.valapi.library.data.local.database.entity.WeaponEntity
+import com.bobbyesp.valapi.library.data.local.database.entity.WeaponSkinEntity
 import com.bobbyesp.valapi.library.domain.model.agent.AbilityTypeConverter
 import com.bobbyesp.valapi.library.domain.model.agent.RoleTypeConverters
 import com.bobbyesp.valapi.library.domain.model.agent.VoiceLineTypeConverter
@@ -28,6 +43,12 @@ import com.bobbyesp.valapi.library.domain.model.gamemodes.GameFeatureOverrideTyp
 import com.bobbyesp.valapi.library.domain.model.gamemodes.GameRuleBoolOverrideTypeConverters
 import com.bobbyesp.valapi.library.domain.model.gear.GearTypeConverters
 import com.bobbyesp.valapi.library.domain.model.gear.ShopDataTypeConverters
+import com.bobbyesp.valapi.library.domain.model.maps.CalloutTypeConverters
+import com.bobbyesp.valapi.library.domain.model.seasons.competitive.BorderTypeConverters
+import com.bobbyesp.valapi.library.domain.model.weapons.SkinLevelTypeConverters
+import com.bobbyesp.valapi.library.domain.model.weapons.WeaponStatsTypeConverters
+import com.bobbyesp.valapi.library.domain.model.weapons.skins.WeaponSkinTypeConverters
+import com.bobbyesp.valapi.library.domain.model.weapons.skins.chromas.ChromaTypeConverters
 
 @Database(
     entities = [
@@ -43,7 +64,21 @@ import com.bobbyesp.valapi.library.domain.model.gear.ShopDataTypeConverters
         EquippableEntity::class,
         EventEntity::class,
         GamemodeEntity::class,
-        GearEntity::class
+        GearEntity::class,
+        LevelBorderEntity::class,
+        MapEntity::class,
+        PlayerCardEntity::class,
+        PlayerTitleEntity::class,
+        SeasonEntity::class,
+        CompetitiveSeasonEntity::class,
+        SprayEntity::class,
+        SprayLevelEntity::class,
+        ThemeEntity::class,
+        VersionEntity::class,
+        WeaponEntity::class,
+        WeaponSkinEntity::class,
+        ChromaEntity::class,
+        SkinLevelEntity::class
     ],
     version = 1
 )
@@ -57,7 +92,14 @@ import com.bobbyesp.valapi.library.domain.model.gear.ShopDataTypeConverters
     GameFeatureOverrideTypeConverters::class,
     GearTypeConverters::class,
     GameRuleBoolOverrideTypeConverters::class,
-    ShopDataTypeConverters::class
+    ShopDataTypeConverters::class,
+    WeaponSkinTypeConverters::class,
+    WeaponStatsTypeConverters::class,
+    SprayLevelEntityTypeConverters::class,
+    ChromaTypeConverters::class,
+    CalloutTypeConverters::class,
+    BorderTypeConverters::class,
+    SkinLevelTypeConverters::class
 )
 abstract class ValAPILibraryDb : RoomDatabase() {
     abstract fun agentDao(): AgentDao
