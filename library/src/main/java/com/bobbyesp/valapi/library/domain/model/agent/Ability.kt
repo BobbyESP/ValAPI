@@ -17,7 +17,7 @@ class AbilityTypeConverter {
     val json = Json {
         ignoreUnknownKeys = true
         encodeDefaults = true
-     };
+    };
 
     @TypeConverter
     fun fromJson(jsonString: String): Ability {

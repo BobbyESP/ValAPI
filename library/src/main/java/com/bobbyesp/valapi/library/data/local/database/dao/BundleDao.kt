@@ -4,6 +4,6 @@ import androidx.room.Dao
 import com.bobbyesp.valapi.library.data.local.database.entity.BundleEntity
 
 @Dao
-interface BundleDao: BaseDao<BundleEntity> {
+interface BundleDao : BaseDao<BundleEntity> {
 
 }

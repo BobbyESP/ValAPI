@@ -6,7 +6,6 @@ import androidx.room.PrimaryKey
 import com.bobbyesp.valapi.library.domain.model.gear.ShopData
 import com.bobbyesp.valapi.library.domain.model.weapons.WeaponStats
 import com.bobbyesp.valapi.library.domain.model.weapons.skins.WeaponSkin
-import kotlinx.serialization.Serializable
 
 @Entity(tableName = "weapons")
 data class WeaponEntity(

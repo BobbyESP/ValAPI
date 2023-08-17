@@ -4,7 +4,6 @@ package com.bobbyesp.valapi.library.data.local.database.entity
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.bobbyesp.valapi.library.domain.model.seasons.competitive.Border
-import kotlinx.serialization.Serializable
 
 @Entity(tableName = "competitive_seasons")
 data class CompetitiveSeasonEntity(

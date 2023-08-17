@@ -3,7 +3,6 @@ package com.bobbyesp.valapi.library.data.local.database.entity
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import kotlinx.serialization.Serializable
 
 @Entity(tableName = "spray_levels")
 data class SprayLevelEntity(

@@ -4,7 +4,6 @@ package com.bobbyesp.valapi.library.data.local.database.entity
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.bobbyesp.valapi.library.domain.model.maps.Callout
-import kotlinx.serialization.Serializable
 
 @Entity(tableName = "maps")
 data class MapEntity(

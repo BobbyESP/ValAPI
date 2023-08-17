@@ -9,7 +9,7 @@ data class Buddy(
     val displayName: String = "",
     val isHiddenIfNotOwned: Boolean = false,
     val themeUuid: String? = null,
-    val displayIcon : String = "",
+    val displayIcon: String = "",
     val assetPath: String = "",
     val levels: List<BuddyLevel> = emptyList()
 )

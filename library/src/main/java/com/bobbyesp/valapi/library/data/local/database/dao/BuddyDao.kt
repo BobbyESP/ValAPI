@@ -4,5 +4,5 @@ import androidx.room.Dao
 import com.bobbyesp.valapi.library.data.local.database.entity.BuddyEntity
 
 @Dao
-interface BuddyDao: BaseDao<BuddyEntity> {
+interface BuddyDao : BaseDao<BuddyEntity> {
 }

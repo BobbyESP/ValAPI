@@ -17,7 +17,7 @@ class VoiceLineTypeConverter {
     val json = Json {
         ignoreUnknownKeys = true
         encodeDefaults = true
-     };
+    };
 
     @TypeConverter
     fun fromJson(jsonString: String): VoiceLine {

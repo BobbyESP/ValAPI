@@ -43,8 +43,8 @@ import com.bobbyesp.valapi.library.domain.model.sprays.levels.SprayLevels
 import com.bobbyesp.valapi.library.domain.model.themes.Theme
 import com.bobbyesp.valapi.library.domain.model.themes.Themes
 import com.bobbyesp.valapi.library.domain.model.version.Version
-import com.bobbyesp.valapi.library.domain.model.weapons.Weapon
 import com.bobbyesp.valapi.library.domain.model.weapons.SkinLevel
+import com.bobbyesp.valapi.library.domain.model.weapons.Weapon
 import com.bobbyesp.valapi.library.domain.model.weapons.Weapons
 import com.bobbyesp.valapi.library.domain.model.weapons.skins.WeaponSkin
 import com.bobbyesp.valapi.library.domain.model.weapons.skins.WeaponSkins

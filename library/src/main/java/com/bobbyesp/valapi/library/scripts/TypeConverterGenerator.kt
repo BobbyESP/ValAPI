@@ -1,9 +1,4 @@
-
 import com.bobbyesp.valapi.library.data.local.database.entity.SprayLevelEntity
-import com.bobbyesp.valapi.library.domain.model.gamemodes.GameFeatureOverride
-import com.bobbyesp.valapi.library.domain.model.gamemodes.GameRuleBoolOverride
-import com.bobbyesp.valapi.library.domain.model.gear.Gear
-import com.bobbyesp.valapi.library.domain.model.gear.ShopData
 import com.bobbyesp.valapi.library.domain.model.maps.Callout
 import com.bobbyesp.valapi.library.domain.model.seasons.competitive.Border
 import com.bobbyesp.valapi.library.domain.model.weapons.SkinLevel
@@ -14,7 +9,15 @@ import java.io.File
 import kotlin.reflect.KClass
 
 fun main() {
-    val classesToGenerate = listOf(Callout::class, Border::class, SprayLevelEntity::class, WeaponSkin::class, WeaponStats::class, Chroma::class, SkinLevel::class)
+    val classesToGenerate = listOf(
+        Callout::class,
+        Border::class,
+        SprayLevelEntity::class,
+        WeaponSkin::class,
+        WeaponStats::class,
+        Chroma::class,
+        SkinLevel::class
+    )
 
     for (clazz in classesToGenerate) {
         generateTypeConverter(clazz)
@@ -62,7 +65,8 @@ fun generateTypeConverter(clazz: KClass<*>) {
         }
     """.trimIndent()
 
-    val outputFile = File("library/src/main/java/com/bobbyesp/valapi/library/converters/$typeConverterClassName.kt")
+    val outputFile =
+        File("library/src/main/java/com/bobbyesp/valapi/library/converters/$typeConverterClassName.kt")
     outputFile.parentFile?.mkdirs()
     outputFile.writeText(typeConverter)
 }
