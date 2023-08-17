@@ -2,7 +2,6 @@ package com.bobbyesp.valapi.library.domain.model.gear
 
 
 import com.bobbyesp.valapi.library.domain.model.weapons.GridPosition
-import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable

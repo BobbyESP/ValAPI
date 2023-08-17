@@ -1,7 +1,6 @@
 package com.bobbyesp.valapi.library.domain.model.seasons.competitive
 
 
-import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable

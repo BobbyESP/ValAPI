@@ -1,6 +1,5 @@
 package com.bobbyesp.valapi.library.util.network
 
-import android.util.Log
 import com.bobbyesp.valapi.library.data.remote.HttpRoutes
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body

@@ -1,8 +1,8 @@
 package com.bobbyesp.valapi.library.domain.model.weapons.skins
 
 
-import com.bobbyesp.valapi.library.domain.model.weapons.skins.chromas.Chroma
 import com.bobbyesp.valapi.library.domain.model.weapons.WeaponLevel
+import com.bobbyesp.valapi.library.domain.model.weapons.skins.chromas.Chroma
 import kotlinx.serialization.Serializable
 
 @Serializable

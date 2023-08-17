@@ -27,8 +27,8 @@ import com.bobbyesp.valapi.library.domain.model.gear.Gear
 import com.bobbyesp.valapi.library.domain.model.gear.Gears
 import com.bobbyesp.valapi.library.domain.model.level_borders.LevelBorder
 import com.bobbyesp.valapi.library.domain.model.level_borders.LevelBorders
-import com.bobbyesp.valapi.library.domain.model.maps.Maps
 import com.bobbyesp.valapi.library.domain.model.maps.Map
+import com.bobbyesp.valapi.library.domain.model.maps.Maps
 import com.bobbyesp.valapi.library.domain.model.player_cards.PlayerCard
 import com.bobbyesp.valapi.library.domain.model.player_cards.PlayerCards
 import com.bobbyesp.valapi.library.domain.model.player_titles.PlayerTitle
@@ -55,13 +55,13 @@ import com.bobbyesp.valapi.library.util.LanguageCode
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.HttpClientEngineFactory
 import io.ktor.client.engine.android.Android
+import io.ktor.client.plugins.cache.HttpCache
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
 import io.ktor.client.plugins.logging.LogLevel
 import io.ktor.client.plugins.logging.Logging
 import io.ktor.http.ContentType
 import io.ktor.serialization.kotlinx.json.json
 import kotlinx.serialization.json.Json
-import io.ktor.client.plugins.cache.*
 
 interface ValorantAPI {
     // --------------- AGENTS ---------------

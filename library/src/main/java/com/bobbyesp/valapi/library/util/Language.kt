@@ -1,7 +1,5 @@
 package com.bobbyesp.valapi.library.util
 
-import java.util.Locale
-
 enum class LanguageCode(val displayName: String) {
     ARABIC_UAE("ar-AE"),
     GERMAN_GERMANY("de-DE"),

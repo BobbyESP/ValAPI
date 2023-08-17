@@ -91,6 +91,8 @@ dependencies {
     implementation(libs.bundles.room)
     ksp(libs.room.compiler)
 
+    implementation(kotlin("reflect"))
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.espresso.core)
