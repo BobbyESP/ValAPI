@@ -89,6 +89,7 @@ kotlin-ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
 kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 androidLibrary = { id = "com.android.library", version.ref = "agp" }
+dokka = { id = "org.jetbrains.dokka", version = "1.8.20" }
 maven-publish = { id = "maven-publish" }
 
 [bundles]

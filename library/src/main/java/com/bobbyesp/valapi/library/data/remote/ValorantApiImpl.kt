@@ -1060,7 +1060,7 @@ class ValorantApiImpl(
      *
      * @param language The language of the response. Default is English
      *
-     * @return [SkinLevels] object that contains a list with the weapon skin levels and the HTTP status code
+     * @return A list with the weapon skin levels
      */
     override suspend fun getWeaponSkinLevels(language: LanguageCode): List<SkinLevel> {
         val params = mutableMapOf<String, String>()
