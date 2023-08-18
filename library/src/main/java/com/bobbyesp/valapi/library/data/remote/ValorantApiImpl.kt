@@ -60,6 +60,15 @@ import io.ktor.client.HttpClient
 class ValorantApiImpl(
     private val client: HttpClient
 ) : ValorantAPI {
+    /**
+     * Get all the agents of the game.
+     * Correspondence to the API route: [/agents](https://valorant-api.com/v1/agents)
+     *
+     * @param language The language of the response. Default is English
+     * @param isCharacterPlayable Whether the agent is playable or not. Default is true
+     *
+     * @return [Agents] object that contains a list with the agents and the HTTP status code
+     */
     override suspend fun getAgents(language: LanguageCode, isCharacterPlayable: Boolean): Agents {
         val params = mutableMapOf<String, String>()
         params["language"] = language.toString()
@@ -73,6 +82,15 @@ class ValorantApiImpl(
 
     }
 
+    /**
+     * Get an agent by its UUID.
+     * Correspondence to the API route: [/agents/:uuid](https://valorant-api.com/v1/agents/{uuid})
+     *
+     * @param language The language of the response. Default is English
+     * @param uuid The UUID of the agent
+     *
+     * @return [Agents] object that contains a list with the agents and the HTTP status code
+     */
     override suspend fun getAgentByUuid(language: LanguageCode, uuid: String): Agents {
         val params = mutableMapOf<String, String>()
         params["language"] = language.toString()
@@ -86,6 +104,14 @@ class ValorantApiImpl(
 
     }
 
+    /**
+     * Get the buddies of the game.
+     * Correspondence to the API route: [/buddies](https://valorant-api.com/v1/buddies/levels)
+     *
+     * @param language The language of the response. Default is English
+     *
+     * @return [Buddies] object that contains a list with the buddy levels and the HTTP status code
+     */
     override suspend fun getBuddies(language: LanguageCode): Buddies {
         val params = mutableMapOf<String, String>()
         params["language"] = language.toString()
@@ -97,6 +123,14 @@ class ValorantApiImpl(
         )
     }
 
+    /**
+     * Get the buddy levels of the game.
+     * Correspondence to the API route: [/buddies/levels](https://valorant-api.com/v1/buddies/levels)
+     *
+     * @param language The language of the response. Default is English
+     *
+     * @return [BuddyLevels] object that contains a list with the buddy levels and the HTTP status code
+     */
     override suspend fun getBuddyLevels(language: LanguageCode): BuddyLevels {
         val params = mutableMapOf<String, String>()
         params["language"] = language.toString()
@@ -109,6 +143,15 @@ class ValorantApiImpl(
 
     }
 
+    /**
+     * Get a buddy by its UUID.
+     * Correspondence to the API route: [/buddies/:uuid](https://valorant-api.com/v1/buddies/{uuid})
+     *
+     * @param language The language of the response. Default is English
+     * @param uuid The UUID of the buddy
+     *
+     * @return [Buddy] object that contains the buddy
+     */
     override suspend fun getBuddyByUuid(language: LanguageCode, uuid: String): Buddy {
         val params = mutableMapOf<String, String>()
         params["language"] = language.toString()
@@ -122,6 +165,15 @@ class ValorantApiImpl(
 
     }
 
+    /**
+     * Get a buddy level by its UUID.
+     * Correspondence to the API route: [/buddies/levels/:uuid](https://valorant-api.com/v1/buddies/levels/{uuid})
+     *
+     * @param language The language of the response. Default is English
+     * @param uuid The UUID of the buddy level
+     *
+     * @return [BuddyLevel] object that contains the buddy level
+     */
     override suspend fun getBuddyLevelByUuid(language: LanguageCode, uuid: String): BuddyLevel {
         val params = mutableMapOf<String, String>()
         params["language"] = language.toString()
@@ -135,6 +187,14 @@ class ValorantApiImpl(
 
     }
 
+    /**
+     * Get the bundles of the game.
+     * Correspondence to the API route: [/bundles](https://valorant-api.com/v1/bundles)
+     *
+     * @param language The language of the response. Default is English
+     *
+     * @return [Bundles] object that contains a list with the bundles and the HTTP status code
+     */
     override suspend fun getBundles(language: LanguageCode): Bundles {
         val params = mutableMapOf<String, String>()
         params["language"] = language.toString()
@@ -147,6 +207,15 @@ class ValorantApiImpl(
 
     }
 
+    /**
+     * Get a bundle by its UUID.
+     * Correspondence to the API route: [/bundles/:uuid](https://valorant-api.com/v1/bundles/{uuid})
+     *
+     * @param language The language of the response. Default is English
+     * @param uuid The UUID of the bundle
+     *
+     * @return [Bundles] object that contains a list with the bundles and the HTTP status code
+     */
     override suspend fun getBundleByUuid(language: LanguageCode, uuid: String): Bundles {
         val params = mutableMapOf<String, String>()
         params["language"] = language.toString()
@@ -159,6 +228,14 @@ class ValorantApiImpl(
         )
     }
 
+    /**
+     * Get the ceremonies of the game.
+     * Correspondence to the API route: [/ceremonies](https://valorant-api.com/v1/ceremonies)
+     *
+     * @param language The language of the response. Default is English
+     *
+     * @return [Ceremonies] object that contains a list with the ceremonies and the HTTP status code
+     */
     override suspend fun getCeremonies(language: LanguageCode): Ceremonies {
         val params = mutableMapOf<String, String>()
         params["language"] = language.toString()
@@ -170,6 +247,15 @@ class ValorantApiImpl(
         )
     }
 
+    /**
+     * Get a ceremony by its UUID.
+     * Correspondence to the API route: [/ceremonies/:uuid](https://valorant-api.com/v1/ceremonies/{uuid})
+     *
+     * @param language The language of the response. Default is English
+     * @param uuid The UUID of the ceremony
+     *
+     * @return [Ceremony] object that contains the ceremony
+     */
     override suspend fun getCeremonyByUuid(language: LanguageCode, uuid: String): Ceremony {
         val params = mutableMapOf<String, String>()
         params["language"] = language.toString()
@@ -183,6 +269,14 @@ class ValorantApiImpl(
 
     }
 
+    /**
+     * Get the competitive tiers of the game.
+     * Correspondence to the API route: [/competitive-tiers](https://valorant-api.com/v1/competitive-tiers)
+     *
+     * @param language The language of the response. Default is English
+     *
+     * @return [CompetitiveTiers] object that contains a list with the competitive tiers and the HTTP status code
+     */
     override suspend fun getCompetitiveTiers(language: LanguageCode): CompetitiveTiers {
         val params = mutableMapOf<String, String>()
         params["language"] = language.toString()
@@ -194,6 +288,15 @@ class ValorantApiImpl(
         )
     }
 
+    /**
+     * Get a competitive tier by its UUID.
+     * Correspondence to the API route: [/competitive-tiers/:uuid](https://valorant-api.com/v1/competitive-tiers/{uuid})
+     *
+     * @param language The language of the response. Default is English
+     * @param uuid The UUID of the competitive tier
+     *
+     * @return [CompetitiveTier] object that contains the competitive tier
+     */
     override suspend fun getCompetitiveTierByUuid(
         language: LanguageCode,
         uuid: String
@@ -209,6 +312,14 @@ class ValorantApiImpl(
         )
     }
 
+    /**
+     * Get the content tiers of the game.
+     * Correspondence to the API route: [/content-tiers](https://valorant-api.com/v1/content-tiers)
+     *
+     * @param language The language of the response. Default is English
+     *
+     * @return [ContentTiers] object that contains a list with the content tiers and the HTTP status code
+     */
     override suspend fun getContentTiers(language: LanguageCode): ContentTiers {
         val params = mutableMapOf<String, String>()
         params["language"] = language.toString()
@@ -220,6 +331,15 @@ class ValorantApiImpl(
         )
     }
 
+    /**
+     * Get a content tier by its UUID.
+     * Correspondence to the API route: [/content-tiers/:uuid](https://valorant-api.com/v1/content-tiers/{uuid})
+     *
+     * @param language The language of the response. Default is English
+     * @param uuid The UUID of the content tier
+     *
+     * @return [ContentTier] object that contains the content tier
+     */
     override suspend fun getContentTierByUuid(language: LanguageCode, uuid: String): ContentTier {
         val params = mutableMapOf<String, String>()
         params["language"] = language.toString()
@@ -232,6 +352,14 @@ class ValorantApiImpl(
         )
     }
 
+    /**
+     * Get the contracts of the game.
+     * Correspondence to the API route: [/contracts](https://valorant-api.com/v1/contracts)
+     *
+     * @param language The language of the response. Default is English
+     *
+     * @return [Contracts] object that contains a list with the contracts and the HTTP status code
+     */
     override suspend fun getContracts(language: LanguageCode): Contracts {
         val params = mutableMapOf<String, String>()
         params["language"] = language.toString()
@@ -243,6 +371,15 @@ class ValorantApiImpl(
         )
     }
 
+    /**
+     * Get a contract by its UUID.
+     * Correspondence to the API route: [/contracts/:uuid](https://valorant-api.com/v1/contracts/{uuid})
+     *
+     * @param language The language of the response. Default is English
+     * @param uuid The UUID of the contract
+     *
+     * @return [Contract] object that contains the contract
+     */
     override suspend fun getContractByUuid(language: LanguageCode, uuid: String): Contract {
         val params = mutableMapOf<String, String>()
         params["language"] = language.toString()
@@ -255,6 +392,14 @@ class ValorantApiImpl(
         )
     }
 
+    /**
+     * Get the currencies of the game.
+     * Correspondence to the API route: [/currencies](https://valorant-api.com/v1/currencies)
+     *
+     * @param language The language of the response. Default is English
+     *
+     * @return [Currencies] object that contains a list with the currencies and the HTTP status code
+     */
     override suspend fun getCurrencies(language: LanguageCode): Currencies {
         val params = mutableMapOf<String, String>()
         params["language"] = language.toString()
@@ -266,6 +411,15 @@ class ValorantApiImpl(
         )
     }
 
+    /**
+     * Get a currency by its UUID.
+     * Correspondence to the API route: [/currencies/:uuid](https://valorant-api.com/v1/currencies/{uuid})
+     *
+     * @param language The language of the response. Default is English
+     * @param uuid The UUID of the currency
+     *
+     * @return [Currency] object that contains the currency
+     */
     override suspend fun getCurrencyByUuid(language: LanguageCode, uuid: String): Currency {
         val params = mutableMapOf<String, String>()
         params["language"] = language.toString()
@@ -277,6 +431,14 @@ class ValorantApiImpl(
         )
     }
 
+    /**
+     * Get the events of the game.
+     * Correspondence to the API route: [/events](https://valorant-api.com/v1/events)
+     *
+     * @param language The language of the response. Default is English
+     *
+     * @return [Events] object that contains a list with the events and the HTTP status code
+     */
     override suspend fun getEvents(language: LanguageCode): Events {
         val params = mutableMapOf<String, String>()
         params["language"] = language.toString()
@@ -287,6 +449,15 @@ class ValorantApiImpl(
         )
     }
 
+    /**
+     * Get an event by its UUID.
+     * Correspondence to the API route: [/events/:uuid](https://valorant-api.com/v1/events/{uuid})
+     *
+     * @param language The language of the response. Default is English
+     * @param uuid The UUID of the event
+     *
+     * @return [Event] object that contains the event
+     */
     override suspend fun getEventByUuid(language: LanguageCode, uuid: String): Event {
         val params = mutableMapOf<String, String>()
         params["language"] = language.toString()
@@ -298,6 +469,14 @@ class ValorantApiImpl(
         )
     }
 
+    /**
+     * Get the gamemodes of the game.
+     * Correspondence to the API route: [/gamemodes](https://valorant-api.com/v1/gamemodes)
+     *
+     * @param language The language of the response. Default is English
+     *
+     * @return [Gamemodes] object that contains a list with the gamemodes and the HTTP status code
+     */
     override suspend fun getGameModes(language: LanguageCode): Gamemodes {
         val params = mutableMapOf<String, String>()
         params["language"] = language.toString()
@@ -308,6 +487,15 @@ class ValorantApiImpl(
         )
     }
 
+    /**
+     * Get a gamemode by its UUID.
+     * Correspondence to the API route: [/gamemodes/:uuid](https://valorant-api.com/v1/gamemodes/{uuid})
+     *
+     * @param language The language of the response. Default is English
+     * @param uuid The UUID of the gamemode
+     *
+     * @return [Gamemode] object that contains the gamemode
+     */
     override suspend fun getGameModeByUuid(language: LanguageCode, uuid: String): Gamemode {
         val params = mutableMapOf<String, String>()
         params["language"] = language.toString()
@@ -319,6 +507,14 @@ class ValorantApiImpl(
         )
     }
 
+    /**
+     * Get the equippables of the game.
+     * Correspondence to the API route: [/gamemodes/equippables](https://valorant-api.com/v1/gamemodes/equippables)
+     *
+     * @param language The language of the response. Default is English
+     *
+     * @return [Equippables] object that contains a list with the equippables and the HTTP status code
+     */
     override suspend fun getGameModeEquippables(language: LanguageCode): Equippables {
         val params = mutableMapOf<String, String>()
         params["language"] = language.toString()
@@ -330,6 +526,15 @@ class ValorantApiImpl(
 
     }
 
+    /**
+     * Get an equippable by its UUID.
+     * Correspondence to the API route: [/gamemodes/equippables/:uuid](https://valorant-api.com/v1/gamemodes/equippables/{uuid})
+     *
+     * @param language The language of the response. Default is English
+     * @param uuid The UUID of the equippable
+     *
+     * @return [Equippable] object that contains the equippable
+     */
     override suspend fun getGameModeEquippableByUuid(
         language: LanguageCode,
         uuid: String
@@ -344,6 +549,14 @@ class ValorantApiImpl(
         )
     }
 
+    /**
+     * Get the gears of the game.
+     * Correspondence to the API route: [/gears](https://valorant-api.com/v1/gears)
+     *
+     * @param language The language of the response. Default is English
+     *
+     * @return [Gears] object that contains a list with the gears and the HTTP status code
+     */
     override suspend fun getGears(language: LanguageCode): Gears {
         val params = mutableMapOf<String, String>()
         params["language"] = language.toString()
@@ -354,6 +567,15 @@ class ValorantApiImpl(
         )
     }
 
+    /**
+     * Get a gear by its UUID.
+     * Correspondence to the API route: [/gears/:uuid](https://valorant-api.com/v1/gears/{uuid})
+     *
+     * @param language The language of the response. Default is English
+     * @param uuid The UUID of the gear
+     *
+     * @return [Gear] object that contains the gear
+     */
     override suspend fun getGearByUuid(language: LanguageCode, uuid: String): Gear {
         val params = mutableMapOf<String, String>()
         params["language"] = language.toString()
@@ -365,6 +587,14 @@ class ValorantApiImpl(
         )
     }
 
+    /**
+     * Get the level borders of the game.
+     * Correspondence to the API route: [/level-borders](https://valorant-api.com/v1/level-borders)
+     *
+     * @param language The language of the response. Default is English
+     *
+     * @return [LevelBorders] object that contains a list with the level borders and the HTTP status code
+     */
     override suspend fun getLevelBorders(language: LanguageCode): LevelBorders {
         val params = mutableMapOf<String, String>()
         params["language"] = language.toString()
@@ -375,6 +605,15 @@ class ValorantApiImpl(
         )
     }
 
+    /**
+     * Get a level border by its UUID.
+     * Correspondence to the API route: [/level-borders/:uuid](https://valorant-api.com/v1/level-borders/{uuid})
+     *
+     * @param language The language of the response. Default is English
+     * @param uuid The UUID of the level border
+     *
+     * @return [LevelBorder] object that contains the level border
+     */
     override suspend fun getLevelBorderByUuid(language: LanguageCode, uuid: String): LevelBorder {
         val params = mutableMapOf<String, String>()
         params["language"] = language.toString()
@@ -386,6 +625,14 @@ class ValorantApiImpl(
         )
     }
 
+    /**
+     * Get the maps of the game.
+     * Correspondence to the API route: [/maps](https://valorant-api.com/v1/maps)
+     *
+     * @param language The language of the response. Default is English
+     *
+     * @return [Maps] object that contains a list with the maps and the HTTP status code
+     */
     override suspend fun getMaps(language: LanguageCode): Maps {
         val params = mutableMapOf<String, String>()
         params["language"] = language.toString()
@@ -396,6 +643,15 @@ class ValorantApiImpl(
         )
     }
 
+    /**
+     * Get a map by its UUID.
+     * Correspondence to the API route: [/maps/:uuid](https://valorant-api.com/v1/maps/{uuid})
+     *
+     * @param language The language of the response. Default is English
+     * @param uuid The UUID of the map
+     *
+     * @return [Map] object that contains the map
+     */
     override suspend fun getMapByUuid(language: LanguageCode, uuid: String): Map {
         val params = mutableMapOf<String, String>()
         params["language"] = language.toString()
@@ -407,6 +663,14 @@ class ValorantApiImpl(
         )
     }
 
+    /**
+     * Get the player cards of the game.
+     * Correspondence to the API route: [/playercards](https://valorant-api.com/v1/playercards)
+     *
+     * @param language The language of the response. Default is English
+     *
+     * @return [PlayerCards] object that contains a list with the player cards and the HTTP status code
+     */
     override suspend fun getPlayerCards(language: LanguageCode): PlayerCards {
         val params = mutableMapOf<String, String>()
         params["language"] = language.toString()
@@ -417,6 +681,15 @@ class ValorantApiImpl(
         )
     }
 
+    /**
+     * Get a player card by its UUID.
+     * Correspondence to the API route: [/playercards/:uuid](https://valorant-api.com/v1/playercards/{uuid})
+     *
+     * @param language The language of the response. Default is English
+     * @param uuid The UUID of the player card
+     *
+     * @return [PlayerCard] object that contains the player card
+     */
     override suspend fun getPlayerCardByUuid(language: LanguageCode, uuid: String): PlayerCard {
         val params = mutableMapOf<String, String>()
         params["language"] = language.toString()
@@ -428,6 +701,14 @@ class ValorantApiImpl(
         )
     }
 
+    /**
+     * Get the player titles of the game.
+     * Correspondence to the API route: [/playertitles](https://valorant-api.com/v1/playertitles)
+     *
+     * @param language The language of the response. Default is English
+     *
+     * @return [PlayerTitles] object that contains a list with the player titles and the HTTP status code
+     */
     override suspend fun getPlayerTitles(language: LanguageCode): PlayerTitles {
         val params = mutableMapOf<String, String>()
         params["language"] = language.toString()
@@ -438,6 +719,15 @@ class ValorantApiImpl(
         )
     }
 
+    /**
+     * Get a player title by its UUID.
+     * Correspondence to the API route: [/playertitles/:uuid](https://valorant-api.com/v1/playertitles/{uuid})
+     *
+     * @param language The language of the response. Default is English
+     * @param uuid The UUID of the player title
+     *
+     * @return [PlayerTitle] object that contains the player title
+     */
     override suspend fun getPlayerTitleByUuid(language: LanguageCode, uuid: String): PlayerTitle {
         val params = mutableMapOf<String, String>()
         params["language"] = language.toString()
@@ -449,6 +739,14 @@ class ValorantApiImpl(
         )
     }
 
+    /**
+     * Get the seasons of the game.
+     * Correspondence to the API route: [/seasons](https://valorant-api.com/v1/seasons)
+     *
+     * @param language The language of the response. Default is English
+     *
+     * @return [Seasons] object that contains a list with the seasons and the HTTP status code
+     */
     override suspend fun getSeasons(language: LanguageCode): Seasons {
         val params = mutableMapOf<String, String>()
         params["language"] = language.toString()
@@ -459,6 +757,16 @@ class ValorantApiImpl(
         )
     }
 
+
+    /**
+     * Get a season by its UUID.
+     * Correspondence to the API route: [/seasons/:uuid](https://valorant-api.com/v1/seasons/{uuid})
+     *
+     * @param language The language of the response. Default is English
+     * @param uuid The UUID of the season
+     *
+     * @return [Season] object that contains the season
+     */
     override suspend fun getSeasonByUuid(language: LanguageCode, uuid: String): Season {
         val params = mutableMapOf<String, String>()
         params["language"] = language.toString()
@@ -470,6 +778,12 @@ class ValorantApiImpl(
         )
     }
 
+    /**
+     * Get the competitive seasons of the game.
+     * Correspondence to the API route: [/seasons/competitive](https://valorant-api.com/v1/seasons/competitive)
+     *
+     * @return [CompetitiveSeasons] object that contains a list with the competitive seasons and the HTTP status code
+     */
     override suspend fun getCompetitiveSeasons(): CompetitiveSeasons {
         return makeApiCall(
             client = client,
@@ -479,6 +793,14 @@ class ValorantApiImpl(
 
     }
 
+    /**
+     * Get a competitive season by its UUID.
+     * Correspondence to the API route: [/seasons/competitive/:uuid](https://valorant-api.com/v1/seasons/competitive/{uuid})
+     *
+     * @param uuid The UUID of the competitive season
+     *
+     * @return [CompetitiveSeason] object that contains the competitive season
+     */
     override suspend fun getCompetitiveSeasonByUuid(
         uuid: String
     ): CompetitiveSeason {
@@ -490,6 +812,14 @@ class ValorantApiImpl(
 
     }
 
+    /**
+     * Get the sprays of the game.
+     * Correspondence to the API route: [/sprays](https://valorant-api.com/v1/sprays)
+     *
+     * @param language The language of the response. Default is English
+     *
+     * @return [Sprays] object that contains a list with the sprays and the HTTP status code
+     */
     override suspend fun getSprays(language: LanguageCode): Sprays {
         val params = mutableMapOf<String, String>()
         params["language"] = language.toString()
@@ -501,6 +831,15 @@ class ValorantApiImpl(
         )
     }
 
+    /**
+     * Get a spray by its UUID.
+     * Correspondence to the API route: [/sprays/:uuid](https://valorant-api.com/v1/sprays/{uuid})
+     *
+     * @param language The language of the response. Default is English
+     * @param uuid The UUID of the spray
+     *
+     * @return [Spray] object that contains the spray
+     */
     override suspend fun getSprayByUuid(language: LanguageCode, uuid: String): Spray {
         val params = mutableMapOf<String, String>()
         params["language"] = language.toString()
@@ -514,6 +853,14 @@ class ValorantApiImpl(
 
     }
 
+    /**
+     * Get the spray levels of the game.
+     * Correspondence to the API route: [/sprays/levels](https://valorant-api.com/v1/sprays/levels)
+     *
+     * @param language The language of the response. Default is English
+     *
+     * @return [SprayLevels] object that contains a list with the spray levels and the HTTP status code
+     */
     override suspend fun getSprayLevels(language: LanguageCode): SprayLevels {
         val params = mutableMapOf<String, String>()
         params["language"] = language.toString()
@@ -525,6 +872,15 @@ class ValorantApiImpl(
         )
     }
 
+    /**
+     * Get a spray level by its UUID.
+     * Correspondence to the API route: [/sprays/levels/:uuid](https://valorant-api.com/v1/sprays/levels/{uuid})
+     *
+     * @param language The language of the response. Default is English
+     * @param uuid The UUID of the spray level
+     *
+     * @return [SprayLevel] object that contains the spray level
+     */
     override suspend fun getSprayLevelByUuid(language: LanguageCode, uuid: String): SprayLevel {
         val params = mutableMapOf<String, String>()
         params["language"] = language.toString()
@@ -537,6 +893,14 @@ class ValorantApiImpl(
         )
     }
 
+    /**
+     * Get the themes of the game.
+     * Correspondence to the API route: [/themes](https://valorant-api.com/v1/themes)
+     *
+     * @param language The language of the response. Default is English
+     *
+     * @return [Themes] object that contains a list with the themes and the HTTP status code
+     */
     override suspend fun getThemes(language: LanguageCode): Themes {
         val params = mutableMapOf<String, String>()
         params["language"] = language.toString()
@@ -548,6 +912,15 @@ class ValorantApiImpl(
         )
     }
 
+    /**
+     * Get a theme by its UUID.
+     * Correspondence to the API route: [/themes/:uuid](https://valorant-api.com/v1/themes/{uuid})
+     *
+     * @param language The language of the response. Default is English
+     * @param uuid The UUID of the theme
+     *
+     * @return [Theme] object that contains the theme
+     */
     override suspend fun getThemeByUuid(language: LanguageCode, uuid: String): Theme {
         val params = mutableMapOf<String, String>()
         params["language"] = language.toString()
@@ -560,6 +933,14 @@ class ValorantApiImpl(
         )
     }
 
+    /**
+     * Get the weapons of the game.
+     * Correspondence to the API route: [/weapons](https://valorant-api.com/v1/weapons)
+     *
+     * @param language The language of the response. Default is English
+     *
+     * @return [Weapons] object that contains a list with the weapons and the HTTP status code
+     */
     override suspend fun getWeapons(language: LanguageCode): Weapons {
         val params = mutableMapOf<String, String>()
         params["language"] = language.toString()
@@ -572,6 +953,15 @@ class ValorantApiImpl(
 
     }
 
+    /**
+     * Get a weapon by its UUID.
+     * Correspondence to the API route: [/weapons/:uuid](https://valorant-api.com/v1/weapons/{uuid})
+     *
+     * @param language The language of the response. Default is English
+     * @param uuid The UUID of the weapon
+     *
+     * @return [Weapon] object that contains the weapon
+     */
     override suspend fun getWeaponByUuid(language: LanguageCode, uuid: String): Weapon {
         val params = mutableMapOf<String, String>()
         params["language"] = language.toString()
@@ -584,6 +974,14 @@ class ValorantApiImpl(
         )
     }
 
+    /**
+     * Get the weapon skins of the game.
+     * Correspondence to the API route: [/weapons/skins](https://valorant-api.com/v1/weapons/skins)
+     *
+     * @param language The language of the response. Default is English
+     *
+     * @return [WeaponSkins] object that contains a list with the weapon skins and the HTTP status code
+     */
     override suspend fun getWeaponSkins(language: LanguageCode): WeaponSkins {
         val params = mutableMapOf<String, String>()
         params["language"] = language.toString()
@@ -595,6 +993,15 @@ class ValorantApiImpl(
         )
     }
 
+    /**
+     * Get a weapon skin by its UUID.
+     * Correspondence to the API route: [/weapons/skins/:uuid](https://valorant-api.com/v1/weapons/skins/{uuid})
+     *
+     * @param language The language of the response. Default is English
+     * @param uuid The UUID of the weapon skin
+     *
+     * @return [WeaponSkin] object that contains the weapon skin
+     */
     override suspend fun getWeaponSkinByUuid(language: LanguageCode, uuid: String): WeaponSkin {
         val params = mutableMapOf<String, String>()
         params["language"] = language.toString()
@@ -607,6 +1014,14 @@ class ValorantApiImpl(
         )
     }
 
+    /**
+     * Get the weapon skin chromas of the game.
+     * Correspondence to the API route: [/weapons/chromas](https://valorant-api.com/v1/weapons/chromas)
+     *
+     * @param language The language of the response. Default is English
+     *
+     * @return [Chromas] object that contains a list with the weapon skin chromas and the HTTP status code
+     */
     override suspend fun getWeaponSkinChromas(language: LanguageCode): Chromas {
         val params = mutableMapOf<String, String>()
         params["language"] = language.toString()
@@ -618,6 +1033,15 @@ class ValorantApiImpl(
         )
     }
 
+    /**
+     * Get a weapon skin chroma by its UUID.
+     * Correspondence to the API route: [/weapons/chromas/:uuid](https://valorant-api.com/v1/weapons/chromas/{uuid})
+     *
+     * @param language The language of the response. Default is English
+     * @param uuid The UUID of the weapon skin chroma
+     *
+     * @return [Chroma] object that contains the weapon skin chroma
+     */
     override suspend fun getWeaponSkinChromaByUuid(language: LanguageCode, uuid: String): Chroma {
         val params = mutableMapOf<String, String>()
         params["language"] = language.toString()
@@ -630,6 +1054,14 @@ class ValorantApiImpl(
         )
     }
 
+    /**
+     * Get the weapon skin levels of the game.
+     * Correspondence to the API route: [/weapons/levels](https://valorant-api.com/v1/weapons/levels)
+     *
+     * @param language The language of the response. Default is English
+     *
+     * @return [SkinLevels] object that contains a list with the weapon skin levels and the HTTP status code
+     */
     override suspend fun getWeaponSkinLevels(language: LanguageCode): List<SkinLevel> {
         val params = mutableMapOf<String, String>()
         params["language"] = language.toString()
@@ -641,6 +1073,15 @@ class ValorantApiImpl(
         )
     }
 
+    /**
+     * Get a weapon skin level by its UUID.
+     * Correspondence to the API route: [/weapons/levels/:uuid](https://valorant-api.com/v1/weapons/levels/{uuid})
+     *
+     * @param language The language of the response. Default is English
+     * @param uuid The UUID of the weapon skin level
+     *
+     * @return [SkinLevel] object that contains the weapon skin level
+     */
     override suspend fun getWeaponSkinLevelByUuid(
         language: LanguageCode,
         uuid: String
@@ -654,6 +1095,12 @@ class ValorantApiImpl(
         )
     }
 
+    /**
+     * Get the actual game version.
+     * Correspondence to the API route: [/version](https://valorant-api.com/v1/version)
+     *
+     * @return [Version] object that contains the actual game version and some other information about the branch, engine version...
+     */
     override suspend fun getVersion(): Version {
         return makeApiCall(
             client = client,

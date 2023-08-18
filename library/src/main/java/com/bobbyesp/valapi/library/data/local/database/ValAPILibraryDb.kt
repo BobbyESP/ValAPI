@@ -3,9 +3,9 @@ package com.bobbyesp.valapi.library.data.local.database
 import androidx.room.Database
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
-import com.bobbyesp.valapi.library.data.local.database.dao.AgentDao
-import com.bobbyesp.valapi.library.data.local.database.dao.BuddyDao
-import com.bobbyesp.valapi.library.data.local.database.dao.BundleDao
+import com.bobbyesp.valapi.library.data.local.database.dao.specific.AgentDao
+import com.bobbyesp.valapi.library.data.local.database.dao.specific.BuddyDao
+import com.bobbyesp.valapi.library.data.local.database.dao.specific.BundleDao
 import com.bobbyesp.valapi.library.data.local.database.entity.AgentEntity
 import com.bobbyesp.valapi.library.data.local.database.entity.BuddyEntity
 import com.bobbyesp.valapi.library.data.local.database.entity.BuddyLevelEntity
