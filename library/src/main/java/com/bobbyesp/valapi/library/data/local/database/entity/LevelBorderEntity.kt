@@ -10,5 +10,6 @@ data class LevelBorderEntity(
     val levelNumberAppearance: String = "",
     val smallPlayerCardAppearance: String = "",
     val startingLevel: Int = 0,
-    @PrimaryKey val uuid: String = ""
+    @PrimaryKey val uuid: String = "",
+    val timestamp: Long = System.currentTimeMillis()
 )

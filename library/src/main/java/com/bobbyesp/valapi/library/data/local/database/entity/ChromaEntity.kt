@@ -12,5 +12,6 @@ data class ChromaEntity(
     val fullRender: String = "",
     val streamedVideo: String? = null,
     val swatch: String? = null,
-    @PrimaryKey val uuid: String = ""
+    @PrimaryKey val uuid: String = "",
+    val timestamp: Long = System.currentTimeMillis()
 )

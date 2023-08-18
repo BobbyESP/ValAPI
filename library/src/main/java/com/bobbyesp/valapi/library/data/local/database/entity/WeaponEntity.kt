@@ -18,5 +18,6 @@ data class WeaponEntity(
     val shopData: ShopData? = null,
     val skins: List<WeaponSkin> = listOf(),
     @PrimaryKey val uuid: String = "",
-    val weaponStats: WeaponStats? = null
+    val weaponStats: WeaponStats? = null,
+    val timestamp: Long = System.currentTimeMillis()
 )

@@ -15,7 +15,8 @@ data class ContractEntity(
     val displayName: String = "",
     val freeRewardScheduleUuid: String = "",
     val shipIt: Boolean = false,
-    @PrimaryKey val uuid: String = ""
+    @PrimaryKey val uuid: String = "",
+    val timestamp: Long = System.currentTimeMillis()
 )
 
 class ContentTypeConverters {

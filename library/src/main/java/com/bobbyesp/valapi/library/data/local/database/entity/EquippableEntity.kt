@@ -11,5 +11,6 @@ data class EquippableEntity(
     val displayIcon: String = "",
     val displayName: String = "",
     val killStreamIcon: String = "",
-    @PrimaryKey val uuid: String = ""
+    @PrimaryKey val uuid: String = "",
+    val timestamp: Long = System.currentTimeMillis()
 )

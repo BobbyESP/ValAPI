@@ -13,5 +13,6 @@ data class CompetitiveSeasonEntity(
     val endTime: String = "",
     val seasonUuid: String = "",
     val startTime: String = "",
-    @PrimaryKey val uuid: String = ""
+    @PrimaryKey val uuid: String = "",
+    val timestamp: Long = System.currentTimeMillis()
 )

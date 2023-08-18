@@ -7,5 +7,6 @@ import androidx.room.PrimaryKey
 data class CeremonyEntity(
     val assetPath: String = "",
     val displayName: String = "",
-    @PrimaryKey val uuid: String = ""
+    @PrimaryKey val uuid: String = "",
+    val timestamp: Long = System.currentTimeMillis()
 )

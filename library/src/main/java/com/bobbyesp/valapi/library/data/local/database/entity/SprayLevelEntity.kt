@@ -10,5 +10,6 @@ data class SprayLevelEntity(
     val displayIcon: String? = null,
     val displayName: String = "",
     val sprayLevel: Int = 0,
-    @PrimaryKey val uuid: String = ""
+    @PrimaryKey val uuid: String = "",
+    val timestamp: Long = System.currentTimeMillis()
 )

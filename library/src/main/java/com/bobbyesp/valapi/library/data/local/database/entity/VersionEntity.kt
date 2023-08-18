@@ -13,5 +13,6 @@ data class VersionEntity(
     @PrimaryKey val manifestId: String = "",
     val riotClientBuild: String = "",
     val riotClientVersion: String = "",
-    val version: String = ""
+    val version: String = "",
+    val timestamp: Long = System.currentTimeMillis()
 )

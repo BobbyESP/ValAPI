@@ -20,5 +20,6 @@ data class GamemodeEntity(
     val orbCount: Int = 0,
     val roundsPerHalf: Int = 0,
     val teamRoles: List<String>? = null,
-    @PrimaryKey val uuid: String = ""
+    @PrimaryKey val uuid: String = "",
+    val timestamp: Long = System.currentTimeMillis()
 )

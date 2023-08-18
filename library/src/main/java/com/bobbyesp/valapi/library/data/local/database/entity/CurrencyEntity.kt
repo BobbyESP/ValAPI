@@ -10,5 +10,6 @@ data class CurrencyEntity(
     val displayName: String = "",
     val displayNameSingular: String = "",
     val largeIcon: String = "",
-    @PrimaryKey val uuid: String = ""
+    @PrimaryKey val uuid: String = "",
+    val timestamp: Long = System.currentTimeMillis()
 )

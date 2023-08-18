@@ -14,5 +14,6 @@ data class CompetitiveTierEntity(
     val rankTriangleUpIcon: String? = null,
     val smallIcon: String? = null,
     val tier: Int = 0,
-    @PrimaryKey val tierName: String = ""
+    @PrimaryKey val tierName: String = "",
+    val timestamp: Long = System.currentTimeMillis()
 )

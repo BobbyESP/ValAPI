@@ -15,5 +15,6 @@ data class BundleEntity(
     val extraDescription: String? = null,
     val promoDescription: String? = null,
     val useAdditionalContext: Boolean = false,
-    val verticalPromoImage: String? = null
+    val verticalPromoImage: String? = null,
+    val timestamp: Long = System.currentTimeMillis()
 )

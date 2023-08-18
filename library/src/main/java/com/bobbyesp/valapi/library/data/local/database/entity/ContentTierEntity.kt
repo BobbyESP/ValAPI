@@ -13,5 +13,6 @@ data class ContentTierEntity(
     val juiceCost: Int = 0,
     val juiceValue: Int = 0,
     val rank: Int = 0,
-    @PrimaryKey val uuid: String = ""
+    @PrimaryKey val uuid: String = "",
+    val timestamp: Long = System.currentTimeMillis()
 )

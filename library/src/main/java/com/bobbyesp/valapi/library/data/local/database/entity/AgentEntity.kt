@@ -29,7 +29,8 @@ data class AgentEntity(
     val isPlayableCharacter: Boolean = false,
     val killfeedPortrait: String = "",
     val role: Role? = null,
-    val voiceLine: VoiceLine = VoiceLine()
+    val voiceLine: VoiceLine = VoiceLine(),
+    val timestamp: Long = System.currentTimeMillis()
 ) {
     companion object {
         fun fromAgent(agent: Agent): AgentEntity {
@@ -52,23 +53,23 @@ data class AgentEntity(
             )
         }
 
-        fun toAgent(agentEntity: AgentEntity): Agent {
+        fun AgentEntity.toAgent(): Agent {
             return Agent(
-                uuid = agentEntity.uuid,
-                displayName = agentEntity.displayName,
-                description = agentEntity.description,
-                developerName = agentEntity.developerName,
-                displayIcon = agentEntity.displayIcon,
-                displayIconSmall = agentEntity.displayIconSmall,
-                bustPortrait = agentEntity.bustPortrait,
-                fullPortrait = agentEntity.fullPortrait,
-                killfeedPortrait = agentEntity.killfeedPortrait,
-                assetPath = agentEntity.assetPath,
-                isFullPortraitRightFacing = agentEntity.isFullPortraitRightFacing,
-                isPlayableCharacter = agentEntity.isPlayableCharacter,
-                isAvailableForTest = agentEntity.isAvailableForTest,
-                role = agentEntity.role,
-                abilities = agentEntity.abilities
+                uuid = this.uuid,
+                displayName = this.displayName,
+                description = this.description,
+                developerName = this.developerName,
+                displayIcon = this.displayIcon,
+                displayIconSmall = this.displayIconSmall,
+                bustPortrait = this.bustPortrait,
+                fullPortrait = this.fullPortrait,
+                killfeedPortrait = this.killfeedPortrait,
+                assetPath = this.assetPath,
+                isFullPortraitRightFacing = this.isFullPortraitRightFacing,
+                isPlayableCharacter = this.isPlayableCharacter,
+                isAvailableForTest = this.isAvailableForTest,
+                role = this.role,
+                abilities = this.abilities
             )
         }
     }

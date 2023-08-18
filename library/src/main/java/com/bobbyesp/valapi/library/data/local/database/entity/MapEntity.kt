@@ -19,5 +19,6 @@ data class MapEntity(
     val xMultiplier: Double = 0.0,
     val xScalarToAdd: Double = 0.0,
     val yMultiplier: Double = 0.0,
-    val yScalarToAdd: Double = 0.0
+    val yScalarToAdd: Double = 0.0,
+    val timestamp: Long = System.currentTimeMillis()
 )

@@ -16,5 +16,6 @@ data class WeaponSkinEntity(
     val levels: List<SkinLevel> = listOf(),
     val themeUuid: String = "",
     @PrimaryKey val uuid: String = "",
-    val wallpaper: String? = null
+    val wallpaper: String? = null,
+    val timestamp: Long = System.currentTimeMillis()
 )

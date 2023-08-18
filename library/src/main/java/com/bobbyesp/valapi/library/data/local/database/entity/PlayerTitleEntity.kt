@@ -10,5 +10,6 @@ data class PlayerTitleEntity(
     val displayName: String? = null,
     val isHiddenIfNotOwned: Boolean = false,
     val titleText: String? = null,
-    @PrimaryKey val uuid: String = ""
+    @PrimaryKey val uuid: String = "",
+    val timestamp: Long = System.currentTimeMillis()
 )

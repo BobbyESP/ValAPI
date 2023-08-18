@@ -9,5 +9,6 @@ data class BuddyLevelEntity(
     val charmLevel: Int = 0,
     val displayName: String = "",
     val displayIcon: String = "",
-    val assetPath: String = ""
+    val assetPath: String = "",
+    val timestamp: Long = System.currentTimeMillis()
 )

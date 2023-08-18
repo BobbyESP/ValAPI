@@ -12,5 +12,6 @@ data class GearEntity(
     val displayIcon: String = "",
     val displayName: String = "",
     val shopData: ShopData = ShopData(),
-    @PrimaryKey val uuid: String = ""
+    @PrimaryKey val uuid: String = "",
+    val timestamp: Long = System.currentTimeMillis()
 )

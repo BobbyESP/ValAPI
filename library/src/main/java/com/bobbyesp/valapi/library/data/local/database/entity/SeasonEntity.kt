@@ -12,5 +12,6 @@ data class SeasonEntity(
     val parentUuid: String? = null,
     val startTime: String = "",
     val type: String? = null,
-    @PrimaryKey val uuid: String = ""
+    @PrimaryKey val uuid: String = "",
+    val timestamp: Long = System.currentTimeMillis()
 )

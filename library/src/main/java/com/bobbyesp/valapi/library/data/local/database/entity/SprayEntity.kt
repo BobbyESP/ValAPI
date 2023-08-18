@@ -17,5 +17,6 @@ data class SprayEntity(
     val isNullSpray: Boolean = false,
     val levels: List<SprayLevelEntity> = listOf(),
     val themeUuid: String? = null,
-    @PrimaryKey val uuid: String = ""
+    @PrimaryKey val uuid: String = "",
+    val timestamp: Long = System.currentTimeMillis()
 )

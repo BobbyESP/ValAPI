@@ -10,5 +10,6 @@ data class ThemeEntity(
     val displayIcon: String? = null,
     val displayName: String = "",
     val storeFeaturedImage: String? = null,
-    @PrimaryKey val uuid: String = ""
+    @PrimaryKey val uuid: String = "",
+    val timestamp: Long = System.currentTimeMillis()
 )

@@ -14,5 +14,6 @@ data class PlayerCardEntity(
     val smallArt: String = "",
     val themeUuid: String? = null,
     @PrimaryKey val uuid: String = "",
-    val wideArt: String = ""
+    val wideArt: String = "",
+    val timestamp: Long = System.currentTimeMillis()
 )

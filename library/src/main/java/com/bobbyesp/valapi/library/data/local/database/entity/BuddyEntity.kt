@@ -12,5 +12,6 @@ data class BuddyEntity(
     val themeUuid: String? = null,
     val displayIcon: String = "",
     val assetPath: String = "",
-    val levels: List<BuddyLevel> = emptyList()
+    val levels: List<BuddyLevel> = emptyList(),
+    val timestamp: Long = System.currentTimeMillis()
 )
