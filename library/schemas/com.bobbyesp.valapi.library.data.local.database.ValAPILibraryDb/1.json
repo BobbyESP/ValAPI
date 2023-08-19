@@ -2,11 +2,11 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "a0a1b87ffd2074de86d2e9a065e6756f",
+    "identityHash": "d71f70eae103f3f6c312153312524e08",
     "entities": [
       {
         "tableName": "agents",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`uuid` TEXT NOT NULL, `abilities` TEXT NOT NULL, `assetPath` TEXT NOT NULL, `background` TEXT, `backgroundGradientColors` TEXT NOT NULL, `bustPortrait` TEXT, `characterTags` TEXT, `description` TEXT NOT NULL, `developerName` TEXT NOT NULL, `displayIcon` TEXT NOT NULL, `displayIconSmall` TEXT NOT NULL, `displayName` TEXT NOT NULL, `fullPortrait` TEXT, `fullPortraitV2` TEXT, `isAvailableForTest` INTEGER NOT NULL, `isBaseContent` INTEGER NOT NULL, `isFullPortraitRightFacing` INTEGER NOT NULL, `isPlayableCharacter` INTEGER NOT NULL, `killfeedPortrait` TEXT NOT NULL, `role` TEXT, `voiceLine` TEXT NOT NULL, PRIMARY KEY(`uuid`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`uuid` TEXT NOT NULL, `abilities` TEXT NOT NULL, `assetPath` TEXT NOT NULL, `background` TEXT, `backgroundGradientColors` TEXT NOT NULL, `bustPortrait` TEXT, `characterTags` TEXT, `description` TEXT NOT NULL, `developerName` TEXT NOT NULL, `displayIcon` TEXT NOT NULL, `displayIconSmall` TEXT NOT NULL, `displayName` TEXT NOT NULL, `fullPortrait` TEXT, `fullPortraitV2` TEXT, `isAvailableForTest` INTEGER NOT NULL, `isBaseContent` INTEGER NOT NULL, `isFullPortraitRightFacing` INTEGER NOT NULL, `isPlayableCharacter` INTEGER NOT NULL, `killfeedPortrait` TEXT NOT NULL, `role` TEXT, `voiceLine` TEXT NOT NULL, `language` TEXT NOT NULL, `timestamp` INTEGER NOT NULL, PRIMARY KEY(`uuid`))",
         "fields": [
           {
             "fieldPath": "uuid",
@@ -133,6 +133,18 @@
             "columnName": "voiceLine",
             "affinity": "TEXT",
             "notNull": true
+          },
+          {
+            "fieldPath": "language",
+            "columnName": "language",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "timestamp",
+            "columnName": "timestamp",
+            "affinity": "INTEGER",
+            "notNull": true
           }
         ],
         "primaryKey": {
@@ -146,7 +158,7 @@
       },
       {
         "tableName": "buddies",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`uuid` TEXT NOT NULL, `displayName` TEXT NOT NULL, `isHiddenIfNotOwned` INTEGER NOT NULL, `themeUuid` TEXT, `displayIcon` TEXT NOT NULL, `assetPath` TEXT NOT NULL, `levels` TEXT NOT NULL, PRIMARY KEY(`uuid`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`uuid` TEXT NOT NULL, `displayName` TEXT NOT NULL, `isHiddenIfNotOwned` INTEGER NOT NULL, `themeUuid` TEXT, `displayIcon` TEXT NOT NULL, `assetPath` TEXT NOT NULL, `levels` TEXT NOT NULL, `timestamp` INTEGER NOT NULL, PRIMARY KEY(`uuid`))",
         "fields": [
           {
             "fieldPath": "uuid",
@@ -189,6 +201,12 @@
             "columnName": "levels",
             "affinity": "TEXT",
             "notNull": true
+          },
+          {
+            "fieldPath": "timestamp",
+            "columnName": "timestamp",
+            "affinity": "INTEGER",
+            "notNull": true
           }
         ],
         "primaryKey": {
@@ -202,7 +220,7 @@
       },
       {
         "tableName": "buddy_levels",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`uuid` TEXT NOT NULL, `charmLevel` INTEGER NOT NULL, `displayName` TEXT NOT NULL, `displayIcon` TEXT NOT NULL, `assetPath` TEXT NOT NULL, PRIMARY KEY(`uuid`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`uuid` TEXT NOT NULL, `charmLevel` INTEGER NOT NULL, `displayName` TEXT NOT NULL, `displayIcon` TEXT NOT NULL, `assetPath` TEXT NOT NULL, `timestamp` INTEGER NOT NULL, PRIMARY KEY(`uuid`))",
         "fields": [
           {
             "fieldPath": "uuid",
@@ -233,6 +251,12 @@
             "columnName": "assetPath",
             "affinity": "TEXT",
             "notNull": true
+          },
+          {
+            "fieldPath": "timestamp",
+            "columnName": "timestamp",
+            "affinity": "INTEGER",
+            "notNull": true
           }
         ],
         "primaryKey": {
@@ -246,7 +270,7 @@
       },
       {
         "tableName": "bundles",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`uuid` TEXT NOT NULL, `assetPath` TEXT NOT NULL, `description` TEXT NOT NULL, `displayIcon` TEXT NOT NULL, `displayIcon2` TEXT NOT NULL, `displayName` TEXT NOT NULL, `displayNameSubText` TEXT, `extraDescription` TEXT, `promoDescription` TEXT, `useAdditionalContext` INTEGER NOT NULL, `verticalPromoImage` TEXT, PRIMARY KEY(`uuid`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`uuid` TEXT NOT NULL, `assetPath` TEXT NOT NULL, `description` TEXT NOT NULL, `displayIcon` TEXT NOT NULL, `displayIcon2` TEXT NOT NULL, `displayName` TEXT NOT NULL, `displayNameSubText` TEXT, `extraDescription` TEXT, `promoDescription` TEXT, `useAdditionalContext` INTEGER NOT NULL, `verticalPromoImage` TEXT, `timestamp` INTEGER NOT NULL, PRIMARY KEY(`uuid`))",
         "fields": [
           {
             "fieldPath": "uuid",
@@ -313,6 +337,12 @@
             "columnName": "verticalPromoImage",
             "affinity": "TEXT",
             "notNull": false
+          },
+          {
+            "fieldPath": "timestamp",
+            "columnName": "timestamp",
+            "affinity": "INTEGER",
+            "notNull": true
           }
         ],
         "primaryKey": {
@@ -326,7 +356,7 @@
       },
       {
         "tableName": "ceremonies",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`assetPath` TEXT NOT NULL, `displayName` TEXT NOT NULL, `uuid` TEXT NOT NULL, PRIMARY KEY(`uuid`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`assetPath` TEXT NOT NULL, `displayName` TEXT NOT NULL, `uuid` TEXT NOT NULL, `timestamp` INTEGER NOT NULL, PRIMARY KEY(`uuid`))",
         "fields": [
           {
             "fieldPath": "assetPath",
@@ -345,6 +375,12 @@
             "columnName": "uuid",
             "affinity": "TEXT",
             "notNull": true
+          },
+          {
+            "fieldPath": "timestamp",
+            "columnName": "timestamp",
+            "affinity": "INTEGER",
+            "notNull": true
           }
         ],
         "primaryKey": {
@@ -358,7 +394,7 @@
       },
       {
         "tableName": "competitive_tiers",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`backgroundColor` TEXT NOT NULL, `color` TEXT NOT NULL, `division` TEXT NOT NULL, `divisionName` TEXT NOT NULL, `largeIcon` TEXT, `rankTriangleDownIcon` TEXT, `rankTriangleUpIcon` TEXT, `smallIcon` TEXT, `tier` INTEGER NOT NULL, `tierName` TEXT NOT NULL, PRIMARY KEY(`tierName`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`backgroundColor` TEXT NOT NULL, `color` TEXT NOT NULL, `division` TEXT NOT NULL, `divisionName` TEXT NOT NULL, `largeIcon` TEXT, `rankTriangleDownIcon` TEXT, `rankTriangleUpIcon` TEXT, `smallIcon` TEXT, `tier` INTEGER NOT NULL, `tierName` TEXT NOT NULL, `timestamp` INTEGER NOT NULL, PRIMARY KEY(`tierName`))",
         "fields": [
           {
             "fieldPath": "backgroundColor",
@@ -419,6 +455,12 @@
             "columnName": "tierName",
             "affinity": "TEXT",
             "notNull": true
+          },
+          {
+            "fieldPath": "timestamp",
+            "columnName": "timestamp",
+            "affinity": "INTEGER",
+            "notNull": true
           }
         ],
         "primaryKey": {
@@ -432,7 +474,7 @@
       },
       {
         "tableName": "content_tiers",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`assetPath` TEXT NOT NULL, `devName` TEXT NOT NULL, `displayIcon` TEXT NOT NULL, `displayName` TEXT NOT NULL, `highlightColor` TEXT NOT NULL, `juiceCost` INTEGER NOT NULL, `juiceValue` INTEGER NOT NULL, `rank` INTEGER NOT NULL, `uuid` TEXT NOT NULL, PRIMARY KEY(`uuid`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`assetPath` TEXT NOT NULL, `devName` TEXT NOT NULL, `displayIcon` TEXT NOT NULL, `displayName` TEXT NOT NULL, `highlightColor` TEXT NOT NULL, `juiceCost` INTEGER NOT NULL, `juiceValue` INTEGER NOT NULL, `rank` INTEGER NOT NULL, `uuid` TEXT NOT NULL, `timestamp` INTEGER NOT NULL, PRIMARY KEY(`uuid`))",
         "fields": [
           {
             "fieldPath": "assetPath",
@@ -487,6 +529,12 @@
             "columnName": "uuid",
             "affinity": "TEXT",
             "notNull": true
+          },
+          {
+            "fieldPath": "timestamp",
+            "columnName": "timestamp",
+            "affinity": "INTEGER",
+            "notNull": true
           }
         ],
         "primaryKey": {
@@ -500,7 +548,7 @@
       },
       {
         "tableName": "contracts",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`assetPath` TEXT NOT NULL, `content` TEXT NOT NULL, `displayIcon` TEXT, `displayName` TEXT NOT NULL, `freeRewardScheduleUuid` TEXT NOT NULL, `shipIt` INTEGER NOT NULL, `uuid` TEXT NOT NULL, PRIMARY KEY(`uuid`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`assetPath` TEXT NOT NULL, `content` TEXT NOT NULL, `displayIcon` TEXT, `displayName` TEXT NOT NULL, `freeRewardScheduleUuid` TEXT NOT NULL, `shipIt` INTEGER NOT NULL, `uuid` TEXT NOT NULL, `timestamp` INTEGER NOT NULL, PRIMARY KEY(`uuid`))",
         "fields": [
           {
             "fieldPath": "assetPath",
@@ -543,6 +591,12 @@
             "columnName": "uuid",
             "affinity": "TEXT",
             "notNull": true
+          },
+          {
+            "fieldPath": "timestamp",
+            "columnName": "timestamp",
+            "affinity": "INTEGER",
+            "notNull": true
           }
         ],
         "primaryKey": {
@@ -556,7 +610,7 @@
       },
       {
         "tableName": "currencies",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`assetPath` TEXT NOT NULL, `displayIcon` TEXT NOT NULL, `displayName` TEXT NOT NULL, `displayNameSingular` TEXT NOT NULL, `largeIcon` TEXT NOT NULL, `uuid` TEXT NOT NULL, PRIMARY KEY(`uuid`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`assetPath` TEXT NOT NULL, `displayIcon` TEXT NOT NULL, `displayName` TEXT NOT NULL, `displayNameSingular` TEXT NOT NULL, `largeIcon` TEXT NOT NULL, `uuid` TEXT NOT NULL, `timestamp` INTEGER NOT NULL, PRIMARY KEY(`uuid`))",
         "fields": [
           {
             "fieldPath": "assetPath",
@@ -593,6 +647,12 @@
             "columnName": "uuid",
             "affinity": "TEXT",
             "notNull": true
+          },
+          {
+            "fieldPath": "timestamp",
+            "columnName": "timestamp",
+            "affinity": "INTEGER",
+            "notNull": true
           }
         ],
         "primaryKey": {
@@ -606,7 +666,7 @@
       },
       {
         "tableName": "equippables",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`assetPath` TEXT NOT NULL, `category` TEXT NOT NULL, `displayIcon` TEXT NOT NULL, `displayName` TEXT NOT NULL, `killStreamIcon` TEXT NOT NULL, `uuid` TEXT NOT NULL, PRIMARY KEY(`uuid`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`assetPath` TEXT NOT NULL, `category` TEXT NOT NULL, `displayIcon` TEXT NOT NULL, `displayName` TEXT NOT NULL, `killStreamIcon` TEXT NOT NULL, `uuid` TEXT NOT NULL, `timestamp` INTEGER NOT NULL, PRIMARY KEY(`uuid`))",
         "fields": [
           {
             "fieldPath": "assetPath",
@@ -643,6 +703,12 @@
             "columnName": "uuid",
             "affinity": "TEXT",
             "notNull": true
+          },
+          {
+            "fieldPath": "timestamp",
+            "columnName": "timestamp",
+            "affinity": "INTEGER",
+            "notNull": true
           }
         ],
         "primaryKey": {
@@ -656,7 +722,7 @@
       },
       {
         "tableName": "events",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`assetPath` TEXT NOT NULL, `displayName` TEXT NOT NULL, `endTime` TEXT NOT NULL, `shortDisplayName` TEXT NOT NULL, `startTime` TEXT NOT NULL, `uuid` TEXT NOT NULL, PRIMARY KEY(`uuid`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`assetPath` TEXT NOT NULL, `displayName` TEXT NOT NULL, `endTime` TEXT NOT NULL, `shortDisplayName` TEXT NOT NULL, `startTime` TEXT NOT NULL, `uuid` TEXT NOT NULL, `timestamp` INTEGER NOT NULL, PRIMARY KEY(`uuid`))",
         "fields": [
           {
             "fieldPath": "assetPath",
@@ -693,6 +759,12 @@
             "columnName": "uuid",
             "affinity": "TEXT",
             "notNull": true
+          },
+          {
+            "fieldPath": "timestamp",
+            "columnName": "timestamp",
+            "affinity": "INTEGER",
+            "notNull": true
           }
         ],
         "primaryKey": {
@@ -706,7 +778,7 @@
       },
       {
         "tableName": "gamemodes",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`allowsMatchTimeouts` INTEGER NOT NULL, `assetPath` TEXT NOT NULL, `displayIcon` TEXT, `displayName` TEXT NOT NULL, `duration` TEXT, `gameFeatureOverrides` TEXT, `gameRuleBoolOverrides` TEXT, `isMinimapHidden` INTEGER NOT NULL, `isTeamVoiceAllowed` INTEGER NOT NULL, `orbCount` INTEGER NOT NULL, `roundsPerHalf` INTEGER NOT NULL, `teamRoles` TEXT, `uuid` TEXT NOT NULL, PRIMARY KEY(`uuid`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`allowsMatchTimeouts` INTEGER NOT NULL, `assetPath` TEXT NOT NULL, `displayIcon` TEXT, `displayName` TEXT NOT NULL, `duration` TEXT, `gameFeatureOverrides` TEXT, `gameRuleBoolOverrides` TEXT, `isMinimapHidden` INTEGER NOT NULL, `isTeamVoiceAllowed` INTEGER NOT NULL, `orbCount` INTEGER NOT NULL, `roundsPerHalf` INTEGER NOT NULL, `teamRoles` TEXT, `uuid` TEXT NOT NULL, `timestamp` INTEGER NOT NULL, PRIMARY KEY(`uuid`))",
         "fields": [
           {
             "fieldPath": "allowsMatchTimeouts",
@@ -785,6 +857,12 @@
             "columnName": "uuid",
             "affinity": "TEXT",
             "notNull": true
+          },
+          {
+            "fieldPath": "timestamp",
+            "columnName": "timestamp",
+            "affinity": "INTEGER",
+            "notNull": true
           }
         ],
         "primaryKey": {
@@ -798,7 +876,7 @@
       },
       {
         "tableName": "gears",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`assetPath` TEXT NOT NULL, `description` TEXT NOT NULL, `displayIcon` TEXT NOT NULL, `displayName` TEXT NOT NULL, `shopData` TEXT NOT NULL, `uuid` TEXT NOT NULL, PRIMARY KEY(`uuid`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`assetPath` TEXT NOT NULL, `description` TEXT NOT NULL, `displayIcon` TEXT NOT NULL, `displayName` TEXT NOT NULL, `shopData` TEXT NOT NULL, `uuid` TEXT NOT NULL, `timestamp` INTEGER NOT NULL, PRIMARY KEY(`uuid`))",
         "fields": [
           {
             "fieldPath": "assetPath",
@@ -835,6 +913,12 @@
             "columnName": "uuid",
             "affinity": "TEXT",
             "notNull": true
+          },
+          {
+            "fieldPath": "timestamp",
+            "columnName": "timestamp",
+            "affinity": "INTEGER",
+            "notNull": true
           }
         ],
         "primaryKey": {
@@ -848,7 +932,7 @@
       },
       {
         "tableName": "level_borders",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`assetPath` TEXT NOT NULL, `levelNumberAppearance` TEXT NOT NULL, `smallPlayerCardAppearance` TEXT NOT NULL, `startingLevel` INTEGER NOT NULL, `uuid` TEXT NOT NULL, PRIMARY KEY(`uuid`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`assetPath` TEXT NOT NULL, `levelNumberAppearance` TEXT NOT NULL, `smallPlayerCardAppearance` TEXT NOT NULL, `startingLevel` INTEGER NOT NULL, `uuid` TEXT NOT NULL, `timestamp` INTEGER NOT NULL, PRIMARY KEY(`uuid`))",
         "fields": [
           {
             "fieldPath": "assetPath",
@@ -879,6 +963,12 @@
             "columnName": "uuid",
             "affinity": "TEXT",
             "notNull": true
+          },
+          {
+            "fieldPath": "timestamp",
+            "columnName": "timestamp",
+            "affinity": "INTEGER",
+            "notNull": true
           }
         ],
         "primaryKey": {
@@ -892,7 +982,7 @@
       },
       {
         "tableName": "maps",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`assetPath` TEXT NOT NULL, `callouts` TEXT, `coordinates` TEXT, `displayIcon` TEXT, `displayName` TEXT NOT NULL, `listViewIcon` TEXT NOT NULL, `mapUrl` TEXT NOT NULL, `splash` TEXT NOT NULL, `uuid` TEXT NOT NULL, `xMultiplier` REAL NOT NULL, `xScalarToAdd` REAL NOT NULL, `yMultiplier` REAL NOT NULL, `yScalarToAdd` REAL NOT NULL, PRIMARY KEY(`uuid`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`assetPath` TEXT NOT NULL, `callouts` TEXT, `coordinates` TEXT, `displayIcon` TEXT, `displayName` TEXT NOT NULL, `listViewIcon` TEXT NOT NULL, `mapUrl` TEXT NOT NULL, `splash` TEXT NOT NULL, `uuid` TEXT NOT NULL, `xMultiplier` REAL NOT NULL, `xScalarToAdd` REAL NOT NULL, `yMultiplier` REAL NOT NULL, `yScalarToAdd` REAL NOT NULL, `timestamp` INTEGER NOT NULL, PRIMARY KEY(`uuid`))",
         "fields": [
           {
             "fieldPath": "assetPath",
@@ -971,6 +1061,12 @@
             "columnName": "yScalarToAdd",
             "affinity": "REAL",
             "notNull": true
+          },
+          {
+            "fieldPath": "timestamp",
+            "columnName": "timestamp",
+            "affinity": "INTEGER",
+            "notNull": true
           }
         ],
         "primaryKey": {
@@ -984,7 +1080,7 @@
       },
       {
         "tableName": "player_cards",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`assetPath` TEXT NOT NULL, `displayIcon` TEXT NOT NULL, `displayName` TEXT NOT NULL, `isHiddenIfNotOwned` INTEGER NOT NULL, `largeArt` TEXT NOT NULL, `smallArt` TEXT NOT NULL, `themeUuid` TEXT, `uuid` TEXT NOT NULL, `wideArt` TEXT NOT NULL, PRIMARY KEY(`uuid`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`assetPath` TEXT NOT NULL, `displayIcon` TEXT NOT NULL, `displayName` TEXT NOT NULL, `isHiddenIfNotOwned` INTEGER NOT NULL, `largeArt` TEXT NOT NULL, `smallArt` TEXT NOT NULL, `themeUuid` TEXT, `uuid` TEXT NOT NULL, `wideArt` TEXT NOT NULL, `timestamp` INTEGER NOT NULL, PRIMARY KEY(`uuid`))",
         "fields": [
           {
             "fieldPath": "assetPath",
@@ -1039,6 +1135,12 @@
             "columnName": "wideArt",
             "affinity": "TEXT",
             "notNull": true
+          },
+          {
+            "fieldPath": "timestamp",
+            "columnName": "timestamp",
+            "affinity": "INTEGER",
+            "notNull": true
           }
         ],
         "primaryKey": {
@@ -1052,7 +1154,7 @@
       },
       {
         "tableName": "player_titles",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`assetPath` TEXT NOT NULL, `displayName` TEXT, `isHiddenIfNotOwned` INTEGER NOT NULL, `titleText` TEXT, `uuid` TEXT NOT NULL, PRIMARY KEY(`uuid`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`assetPath` TEXT NOT NULL, `displayName` TEXT, `isHiddenIfNotOwned` INTEGER NOT NULL, `titleText` TEXT, `uuid` TEXT NOT NULL, `timestamp` INTEGER NOT NULL, PRIMARY KEY(`uuid`))",
         "fields": [
           {
             "fieldPath": "assetPath",
@@ -1083,6 +1185,12 @@
             "columnName": "uuid",
             "affinity": "TEXT",
             "notNull": true
+          },
+          {
+            "fieldPath": "timestamp",
+            "columnName": "timestamp",
+            "affinity": "INTEGER",
+            "notNull": true
           }
         ],
         "primaryKey": {
@@ -1096,7 +1204,7 @@
       },
       {
         "tableName": "seasons",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`assetPath` TEXT NOT NULL, `displayName` TEXT NOT NULL, `endTime` TEXT NOT NULL, `parentUuid` TEXT, `startTime` TEXT NOT NULL, `type` TEXT, `uuid` TEXT NOT NULL, PRIMARY KEY(`uuid`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`assetPath` TEXT NOT NULL, `displayName` TEXT NOT NULL, `endTime` TEXT NOT NULL, `parentUuid` TEXT, `startTime` TEXT NOT NULL, `type` TEXT, `uuid` TEXT NOT NULL, `timestamp` INTEGER NOT NULL, PRIMARY KEY(`uuid`))",
         "fields": [
           {
             "fieldPath": "assetPath",
@@ -1139,6 +1247,12 @@
             "columnName": "uuid",
             "affinity": "TEXT",
             "notNull": true
+          },
+          {
+            "fieldPath": "timestamp",
+            "columnName": "timestamp",
+            "affinity": "INTEGER",
+            "notNull": true
           }
         ],
         "primaryKey": {
@@ -1152,7 +1266,7 @@
       },
       {
         "tableName": "competitive_seasons",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`assetPath` TEXT NOT NULL, `borders` TEXT, `competitiveTiersUuid` TEXT NOT NULL, `endTime` TEXT NOT NULL, `seasonUuid` TEXT NOT NULL, `startTime` TEXT NOT NULL, `uuid` TEXT NOT NULL, PRIMARY KEY(`uuid`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`assetPath` TEXT NOT NULL, `borders` TEXT, `competitiveTiersUuid` TEXT NOT NULL, `endTime` TEXT NOT NULL, `seasonUuid` TEXT NOT NULL, `startTime` TEXT NOT NULL, `uuid` TEXT NOT NULL, `timestamp` INTEGER NOT NULL, PRIMARY KEY(`uuid`))",
         "fields": [
           {
             "fieldPath": "assetPath",
@@ -1195,6 +1309,12 @@
             "columnName": "uuid",
             "affinity": "TEXT",
             "notNull": true
+          },
+          {
+            "fieldPath": "timestamp",
+            "columnName": "timestamp",
+            "affinity": "INTEGER",
+            "notNull": true
           }
         ],
         "primaryKey": {
@@ -1208,7 +1328,7 @@
       },
       {
         "tableName": "sprays",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`animationGif` TEXT, `animationPng` TEXT, `assetPath` TEXT NOT NULL, `category` TEXT, `displayIcon` TEXT NOT NULL, `displayName` TEXT NOT NULL, `fullIcon` TEXT, `fullTransparentIcon` TEXT, `isNullSpray` INTEGER NOT NULL, `levels` TEXT NOT NULL, `themeUuid` TEXT, `uuid` TEXT NOT NULL, PRIMARY KEY(`uuid`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`animationGif` TEXT, `animationPng` TEXT, `assetPath` TEXT NOT NULL, `category` TEXT, `displayIcon` TEXT NOT NULL, `displayName` TEXT NOT NULL, `fullIcon` TEXT, `fullTransparentIcon` TEXT, `isNullSpray` INTEGER NOT NULL, `levels` TEXT NOT NULL, `themeUuid` TEXT, `uuid` TEXT NOT NULL, `timestamp` INTEGER NOT NULL, PRIMARY KEY(`uuid`))",
         "fields": [
           {
             "fieldPath": "animationGif",
@@ -1281,6 +1401,12 @@
             "columnName": "uuid",
             "affinity": "TEXT",
             "notNull": true
+          },
+          {
+            "fieldPath": "timestamp",
+            "columnName": "timestamp",
+            "affinity": "INTEGER",
+            "notNull": true
           }
         ],
         "primaryKey": {
@@ -1294,7 +1420,7 @@
       },
       {
         "tableName": "spray_levels",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`assetPath` TEXT NOT NULL, `displayIcon` TEXT, `displayName` TEXT NOT NULL, `sprayLevel` INTEGER NOT NULL, `uuid` TEXT NOT NULL, PRIMARY KEY(`uuid`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`assetPath` TEXT NOT NULL, `displayIcon` TEXT, `displayName` TEXT NOT NULL, `sprayLevel` INTEGER NOT NULL, `uuid` TEXT NOT NULL, `timestamp` INTEGER NOT NULL, PRIMARY KEY(`uuid`))",
         "fields": [
           {
             "fieldPath": "assetPath",
@@ -1325,6 +1451,12 @@
             "columnName": "uuid",
             "affinity": "TEXT",
             "notNull": true
+          },
+          {
+            "fieldPath": "timestamp",
+            "columnName": "timestamp",
+            "affinity": "INTEGER",
+            "notNull": true
           }
         ],
         "primaryKey": {
@@ -1338,7 +1470,7 @@
       },
       {
         "tableName": "themes",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`assetPath` TEXT NOT NULL, `displayIcon` TEXT, `displayName` TEXT NOT NULL, `storeFeaturedImage` TEXT, `uuid` TEXT NOT NULL, PRIMARY KEY(`uuid`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`assetPath` TEXT NOT NULL, `displayIcon` TEXT, `displayName` TEXT NOT NULL, `storeFeaturedImage` TEXT, `uuid` TEXT NOT NULL, `timestamp` INTEGER NOT NULL, PRIMARY KEY(`uuid`))",
         "fields": [
           {
             "fieldPath": "assetPath",
@@ -1369,6 +1501,12 @@
             "columnName": "uuid",
             "affinity": "TEXT",
             "notNull": true
+          },
+          {
+            "fieldPath": "timestamp",
+            "columnName": "timestamp",
+            "affinity": "INTEGER",
+            "notNull": true
           }
         ],
         "primaryKey": {
@@ -1382,7 +1520,7 @@
       },
       {
         "tableName": "versions",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`branch` TEXT NOT NULL, `buildDate` TEXT NOT NULL, `buildVersion` TEXT NOT NULL, `engineVersion` TEXT NOT NULL, `manifestId` TEXT NOT NULL, `riotClientBuild` TEXT NOT NULL, `riotClientVersion` TEXT NOT NULL, `version` TEXT NOT NULL, PRIMARY KEY(`manifestId`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`branch` TEXT NOT NULL, `buildDate` TEXT NOT NULL, `buildVersion` TEXT NOT NULL, `engineVersion` TEXT NOT NULL, `manifestId` TEXT NOT NULL, `riotClientBuild` TEXT NOT NULL, `riotClientVersion` TEXT NOT NULL, `version` TEXT NOT NULL, `timestamp` INTEGER NOT NULL, PRIMARY KEY(`manifestId`))",
         "fields": [
           {
             "fieldPath": "branch",
@@ -1431,6 +1569,12 @@
             "columnName": "version",
             "affinity": "TEXT",
             "notNull": true
+          },
+          {
+            "fieldPath": "timestamp",
+            "columnName": "timestamp",
+            "affinity": "INTEGER",
+            "notNull": true
           }
         ],
         "primaryKey": {
@@ -1444,7 +1588,7 @@
       },
       {
         "tableName": "weapons",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`assetPath` TEXT NOT NULL, `category` TEXT NOT NULL, `defaultSkinUuid` TEXT NOT NULL, `displayIcon` TEXT NOT NULL, `displayName` TEXT NOT NULL, `killStreamIcon` TEXT NOT NULL, `shopData` TEXT, `skins` TEXT NOT NULL, `uuid` TEXT NOT NULL, `weaponStats` TEXT, PRIMARY KEY(`uuid`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`assetPath` TEXT NOT NULL, `category` TEXT NOT NULL, `defaultSkinUuid` TEXT NOT NULL, `displayIcon` TEXT NOT NULL, `displayName` TEXT NOT NULL, `killStreamIcon` TEXT NOT NULL, `shopData` TEXT, `skins` TEXT NOT NULL, `uuid` TEXT NOT NULL, `weaponStats` TEXT, `timestamp` INTEGER NOT NULL, PRIMARY KEY(`uuid`))",
         "fields": [
           {
             "fieldPath": "assetPath",
@@ -1505,6 +1649,12 @@
             "columnName": "weaponStats",
             "affinity": "TEXT",
             "notNull": false
+          },
+          {
+            "fieldPath": "timestamp",
+            "columnName": "timestamp",
+            "affinity": "INTEGER",
+            "notNull": true
           }
         ],
         "primaryKey": {
@@ -1518,7 +1668,7 @@
       },
       {
         "tableName": "weapon_skins",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`assetPath` TEXT NOT NULL, `chromas` TEXT NOT NULL, `contentTierUuid` TEXT, `displayIcon` TEXT, `displayName` TEXT NOT NULL, `levels` TEXT NOT NULL, `themeUuid` TEXT NOT NULL, `uuid` TEXT NOT NULL, `wallpaper` TEXT, PRIMARY KEY(`uuid`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`assetPath` TEXT NOT NULL, `chromas` TEXT NOT NULL, `contentTierUuid` TEXT, `displayIcon` TEXT, `displayName` TEXT NOT NULL, `levels` TEXT NOT NULL, `themeUuid` TEXT NOT NULL, `uuid` TEXT NOT NULL, `wallpaper` TEXT, `timestamp` INTEGER NOT NULL, PRIMARY KEY(`uuid`))",
         "fields": [
           {
             "fieldPath": "assetPath",
@@ -1573,6 +1723,12 @@
             "columnName": "wallpaper",
             "affinity": "TEXT",
             "notNull": false
+          },
+          {
+            "fieldPath": "timestamp",
+            "columnName": "timestamp",
+            "affinity": "INTEGER",
+            "notNull": true
           }
         ],
         "primaryKey": {
@@ -1586,7 +1742,7 @@
       },
       {
         "tableName": "weapon_skins_chromas",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`assetPath` TEXT NOT NULL, `displayIcon` TEXT, `displayName` TEXT NOT NULL, `fullRender` TEXT NOT NULL, `streamedVideo` TEXT, `swatch` TEXT, `uuid` TEXT NOT NULL, PRIMARY KEY(`uuid`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`assetPath` TEXT NOT NULL, `displayIcon` TEXT, `displayName` TEXT NOT NULL, `fullRender` TEXT NOT NULL, `streamedVideo` TEXT, `swatch` TEXT, `uuid` TEXT NOT NULL, `timestamp` INTEGER NOT NULL, PRIMARY KEY(`uuid`))",
         "fields": [
           {
             "fieldPath": "assetPath",
@@ -1629,6 +1785,12 @@
             "columnName": "uuid",
             "affinity": "TEXT",
             "notNull": true
+          },
+          {
+            "fieldPath": "timestamp",
+            "columnName": "timestamp",
+            "affinity": "INTEGER",
+            "notNull": true
           }
         ],
         "primaryKey": {
@@ -1642,7 +1804,7 @@
       },
       {
         "tableName": "weapon_skins_levels",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`assetPath` TEXT NOT NULL, `displayIcon` TEXT, `displayName` TEXT NOT NULL, `levelItem` TEXT, `streamedVideo` TEXT, `uuid` TEXT NOT NULL, PRIMARY KEY(`uuid`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`assetPath` TEXT NOT NULL, `displayIcon` TEXT, `displayName` TEXT NOT NULL, `levelItem` TEXT, `streamedVideo` TEXT, `uuid` TEXT NOT NULL, `timestamp` INTEGER NOT NULL, PRIMARY KEY(`uuid`))",
         "fields": [
           {
             "fieldPath": "assetPath",
@@ -1679,6 +1841,12 @@
             "columnName": "uuid",
             "affinity": "TEXT",
             "notNull": true
+          },
+          {
+            "fieldPath": "timestamp",
+            "columnName": "timestamp",
+            "affinity": "INTEGER",
+            "notNull": true
           }
         ],
         "primaryKey": {
@@ -1694,7 +1862,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'a0a1b87ffd2074de86d2e9a065e6756f')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'd71f70eae103f3f6c312153312524e08')"
     ]
   }
 }

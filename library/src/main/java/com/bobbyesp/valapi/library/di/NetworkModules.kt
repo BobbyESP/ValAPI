@@ -1,7 +1,11 @@
 package com.bobbyesp.valapi.library.di
 
-import androidx.compose.ui.viewinterop.AndroidView
+import com.bobbyesp.valapi.library.data.local.database.ValAPILibraryDb
+import com.bobbyesp.valapi.library.data.repository.AgentsImpl
+import com.bobbyesp.valapi.library.data.repository.BuddiesImpl
 import com.bobbyesp.valapi.library.domain.respository.ValorantAPI
+import com.bobbyesp.valapi.library.domain.respository.agents.AgentsAPI
+import com.bobbyesp.valapi.library.domain.respository.agents.BuddiesAPI
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -25,6 +29,24 @@ object NetworkModules {
     @Singleton
     fun provideValorantApi(): ValorantAPI {
         return ValorantAPI.create()
+    }
+
+    @Provides
+    @Singleton
+    fun provideAgentsAPI(
+        valorantAPI: ValorantAPI,
+        valApiDb: ValAPILibraryDb
+    ): AgentsAPI {
+        return AgentsImpl(valorantAPI, valApiDb)
+    }
+
+    @Provides
+    @Singleton
+    fun provideBuddiesAPI(
+        valorantAPI: ValorantAPI,
+        valApiDb: ValAPILibraryDb
+    ): BuddiesAPI {
+        return BuddiesImpl(valorantAPI, valApiDb)
     }
 
     @Provides

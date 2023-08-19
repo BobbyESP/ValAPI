@@ -7,6 +7,7 @@ plugins {
     alias(libs.plugins.kotlin.ksp)
     alias(libs.plugins.kotlin.kapt)
     alias(libs.plugins.dokka)
+    alias(libs.plugins.hilt)
     `maven-publish`
 }
 

@@ -6,6 +6,7 @@ import com.bobbyesp.valapi.library.domain.model.agent.Ability
 import com.bobbyesp.valapi.library.domain.model.agent.Agent
 import com.bobbyesp.valapi.library.domain.model.agent.Role
 import com.bobbyesp.valapi.library.domain.model.agent.VoiceLine
+import com.bobbyesp.valapi.library.util.LanguageCode
 
 @Entity(tableName = "agents")
 data class AgentEntity(
@@ -30,26 +31,29 @@ data class AgentEntity(
     val killfeedPortrait: String = "",
     val role: Role? = null,
     val voiceLine: VoiceLine = VoiceLine(),
+    val language: LanguageCode = LanguageCode.ENGLISH_US,
     val timestamp: Long = System.currentTimeMillis()
 ) {
     companion object {
-        fun fromAgent(agent: Agent): AgentEntity {
+        fun Agent.toAgentEntity(language: LanguageCode = LanguageCode.ENGLISH_US): AgentEntity {
             return AgentEntity(
-                uuid = agent.uuid,
-                displayName = agent.displayName,
-                description = agent.description,
-                developerName = agent.developerName,
-                displayIcon = agent.displayIcon,
-                displayIconSmall = agent.displayIconSmall,
-                bustPortrait = agent.bustPortrait,
-                fullPortrait = agent.fullPortrait,
-                killfeedPortrait = agent.killfeedPortrait,
-                assetPath = agent.assetPath,
-                isFullPortraitRightFacing = agent.isFullPortraitRightFacing,
-                isPlayableCharacter = agent.isPlayableCharacter,
-                isAvailableForTest = agent.isAvailableForTest,
-                role = agent.role,
-                abilities = agent.abilities
+                uuid = this.uuid,
+                displayName = this.displayName,
+                description = this.description,
+                developerName = this.developerName,
+                displayIcon = this.displayIcon,
+                displayIconSmall = this.displayIconSmall,
+                bustPortrait = this.bustPortrait,
+                fullPortrait = this.fullPortrait,
+                killfeedPortrait = this.killfeedPortrait,
+                assetPath = this.assetPath,
+                isFullPortraitRightFacing = this.isFullPortraitRightFacing,
+                isPlayableCharacter = this.isPlayableCharacter,
+                isAvailableForTest = this.isAvailableForTest,
+                role = this.role,
+                abilities = this.abilities,
+                language = language,
+                timestamp = System.currentTimeMillis()
             )
         }
 

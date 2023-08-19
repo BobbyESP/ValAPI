@@ -1,5 +1,6 @@
 package com.bobbyesp.valapi.library.data.local.database
 
+import androidx.room.AutoMigration
 import androidx.room.Database
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
@@ -80,7 +81,10 @@ import com.bobbyesp.valapi.library.domain.model.weapons.skins.chromas.ChromaType
         ChromaEntity::class,
         SkinLevelEntity::class
     ],
-    version = 1
+    version = 2,
+    autoMigrations = [
+        AutoMigration(from = 1, to = 2)
+    ]
 )
 @TypeConverters(
     DbTypeConverters::class,

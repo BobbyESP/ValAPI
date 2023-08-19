@@ -1,6 +1,7 @@
 package com.bobbyesp.valapi.library.domain.respository
 
 import com.bobbyesp.valapi.library.data.remote.ValorantApiImpl
+import com.bobbyesp.valapi.library.domain.model.agent.Agent
 import com.bobbyesp.valapi.library.domain.model.agent.Agents
 import com.bobbyesp.valapi.library.domain.model.buddies.Buddies
 import com.bobbyesp.valapi.library.domain.model.buddies.Buddy
@@ -73,7 +74,7 @@ interface ValorantAPI {
     suspend fun getAgentByUuid(
         language: LanguageCode = LanguageCode.ENGLISH_US,
         uuid: String
-    ): Agents
+    ): Agent
 
     // --------------- BUDDIES ---------------
     suspend fun getBuddies(

@@ -1,5 +1,6 @@
 package com.bobbyesp.valapi.library.data.remote
 
+import com.bobbyesp.valapi.library.domain.model.agent.Agent
 import com.bobbyesp.valapi.library.domain.model.agent.Agents
 import com.bobbyesp.valapi.library.domain.model.buddies.Buddies
 import com.bobbyesp.valapi.library.domain.model.buddies.Buddy
@@ -91,7 +92,7 @@ class ValorantApiImpl(
      *
      * @return [Agents] object that contains a list with the agents and the HTTP status code
      */
-    override suspend fun getAgentByUuid(language: LanguageCode, uuid: String): Agents {
+    override suspend fun getAgentByUuid(language: LanguageCode, uuid: String): Agent {
         val params = mutableMapOf<String, String>()
         params["language"] = language.toString()
         params["uuid"] = uuid
