@@ -4,6 +4,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.bobbyesp.valapi.library.domain.model.agent.Ability
 import com.bobbyesp.valapi.library.domain.model.agent.Agent
+import com.bobbyesp.valapi.library.domain.model.agent.RecruitmentData
 import com.bobbyesp.valapi.library.domain.model.agent.Role
 import com.bobbyesp.valapi.library.domain.model.agent.VoiceLine
 import com.bobbyesp.valapi.library.util.LanguageCode
@@ -28,6 +29,7 @@ data class AgentEntity(
     val isBaseContent: Boolean = false,
     val isFullPortraitRightFacing: Boolean = false,
     val isPlayableCharacter: Boolean = false,
+    val recruitmentData: RecruitmentData? = null,
     val killfeedPortrait: String = "",
     val role: Role? = null,
     val voiceLine: VoiceLine = VoiceLine(),
@@ -52,6 +54,7 @@ data class AgentEntity(
                 isAvailableForTest = this.isAvailableForTest,
                 role = this.role,
                 abilities = this.abilities,
+                recruitmentData = this.recruitmentData,
                 language = language,
                 timestamp = System.currentTimeMillis()
             )
@@ -72,6 +75,7 @@ data class AgentEntity(
                 isFullPortraitRightFacing = this.isFullPortraitRightFacing,
                 isPlayableCharacter = this.isPlayableCharacter,
                 isAvailableForTest = this.isAvailableForTest,
+                recruitmentData = this.recruitmentData,
                 role = this.role,
                 abilities = this.abilities
             )

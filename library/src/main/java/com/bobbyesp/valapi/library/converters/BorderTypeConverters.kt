@@ -1,6 +1,7 @@
-package com.bobbyesp.valapi.library.domain.model.seasons.competitive;
+package com.bobbyesp.valapi.library.converters;
 
 import androidx.room.TypeConverter
+import com.bobbyesp.valapi.library.domain.model.seasons.competitive.Border
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
 
@@ -11,22 +12,22 @@ class BorderTypeConverters {
     };
 
     @TypeConverter
-    fun fromJson(jsonString: String): com.bobbyesp.valapi.library.domain.model.seasons.competitive.Border {
+    fun fromJson(jsonString: String): Border {
         return json.decodeFromString(jsonString);
     }
 
     @TypeConverter
-    fun toJson(value: com.bobbyesp.valapi.library.domain.model.seasons.competitive.Border): String {
+    fun toJson(value: Border): String {
         return json.encodeToString(value);
     }
 
     @TypeConverter
-    fun fromJsonList(jsonString: String): List<com.bobbyesp.valapi.library.domain.model.seasons.competitive.Border> {
+    fun fromJsonList(jsonString: String): List<Border> {
         return json.decodeFromString(jsonString);
     }
 
     @TypeConverter
-    fun toJsonList(value: List<com.bobbyesp.valapi.library.domain.model.seasons.competitive.Border>): String {
+    fun toJsonList(value: List<Border>): String {
         return json.encodeToString(value);
     }
 }

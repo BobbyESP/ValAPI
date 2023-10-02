@@ -1,6 +1,7 @@
-package com.bobbyesp.valapi.library.domain.model.weapons.skins.chromas;
+package com.bobbyesp.valapi.library.converters;
 
 import androidx.room.TypeConverter
+import com.bobbyesp.valapi.library.domain.model.weapons.skins.chromas.Chroma
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
 
@@ -11,22 +12,22 @@ class ChromaTypeConverters {
     };
 
     @TypeConverter
-    fun fromJson(jsonString: String): com.bobbyesp.valapi.library.domain.model.weapons.skins.chromas.Chroma {
+    fun fromJson(jsonString: String): Chroma {
         return json.decodeFromString(jsonString);
     }
 
     @TypeConverter
-    fun toJson(value: com.bobbyesp.valapi.library.domain.model.weapons.skins.chromas.Chroma): String {
+    fun toJson(value: Chroma): String {
         return json.encodeToString(value);
     }
 
     @TypeConverter
-    fun fromJsonList(jsonString: String): List<com.bobbyesp.valapi.library.domain.model.weapons.skins.chromas.Chroma> {
+    fun fromJsonList(jsonString: String): List<Chroma> {
         return json.decodeFromString(jsonString);
     }
 
     @TypeConverter
-    fun toJsonList(value: List<com.bobbyesp.valapi.library.domain.model.weapons.skins.chromas.Chroma>): String {
+    fun toJsonList(value: List<Chroma>): String {
         return json.encodeToString(value);
     }
 }

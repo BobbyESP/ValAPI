@@ -1,6 +1,7 @@
-package com.bobbyesp.valapi.library.domain.model.gamemodes;
+package com.bobbyesp.valapi.library.converters;
 
 import androidx.room.TypeConverter
+import com.bobbyesp.valapi.library.domain.model.gamemodes.GameFeatureOverride
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
 
@@ -11,22 +12,22 @@ class GameFeatureOverrideTypeConverters {
     };
 
     @TypeConverter
-    fun fromJson(jsonString: String): com.bobbyesp.valapi.library.domain.model.gamemodes.GameFeatureOverride {
+    fun fromJson(jsonString: String): GameFeatureOverride {
         return json.decodeFromString(jsonString);
     }
 
     @TypeConverter
-    fun toJson(value: com.bobbyesp.valapi.library.domain.model.gamemodes.GameFeatureOverride): String {
+    fun toJson(value: GameFeatureOverride): String {
         return json.encodeToString(value);
     }
 
     @TypeConverter
-    fun fromJsonList(jsonString: String): List<com.bobbyesp.valapi.library.domain.model.gamemodes.GameFeatureOverride> {
+    fun fromJsonList(jsonString: String): List<GameFeatureOverride> {
         return json.decodeFromString(jsonString);
     }
 
     @TypeConverter
-    fun toJsonList(value: List<com.bobbyesp.valapi.library.domain.model.gamemodes.GameFeatureOverride>): String {
+    fun toJsonList(value: List<GameFeatureOverride>): String {
         return json.encodeToString(value);
     }
 }

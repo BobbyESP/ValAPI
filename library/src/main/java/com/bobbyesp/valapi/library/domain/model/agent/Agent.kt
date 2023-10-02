@@ -1,6 +1,5 @@
 package com.bobbyesp.valapi.library.domain.model.agent
 
-
 import kotlinx.serialization.Serializable
 
 @Serializable
@@ -22,6 +21,7 @@ data class Agent(
     val isBaseContent: Boolean = false,
     val isFullPortraitRightFacing: Boolean = false,
     val isPlayableCharacter: Boolean = false,
+    val recruitmentData: RecruitmentData? = null,
     val killfeedPortrait: String = "",
     val role: Role? = null,
     val uuid: String = "",

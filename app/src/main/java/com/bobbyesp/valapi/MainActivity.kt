@@ -2,6 +2,7 @@ package com.bobbyesp.valapi
 
 import android.app.Application
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
@@ -24,6 +25,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewModelScope
 import com.bobbyesp.valapi.library.domain.model.agent.Agent
+import com.bobbyesp.valapi.library.domain.respository.ValorantAPI
 import com.bobbyesp.valapi.library.domain.respository.agents.AgentsAPI
 import com.bobbyesp.valapi.library.util.LanguageCode
 import com.bobbyesp.valapi.library.util.data.Resource
@@ -91,7 +93,8 @@ fun GreetingPreview() {
 
 @HiltViewModel
 class MainViewModel @Inject constructor(
-    private val agentsAPI: AgentsAPI
+    private val agentsAPI: AgentsAPI,
+    private val valorantAPI: ValorantAPI
 ): ViewModel() {
 
     private val _agents: MutableStateFlow<List<Agent>> = MutableStateFlow(listOf(Agent()))
@@ -106,6 +109,7 @@ class MainViewModel @Inject constructor(
                         }
                     }
                     is Resource.Error -> {
+                        Log.i("MainViewModel", "Error: ${resource.message}")
                         _agents.update {
                             emptyList()
                         }

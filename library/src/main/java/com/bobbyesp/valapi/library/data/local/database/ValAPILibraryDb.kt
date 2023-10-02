@@ -31,7 +31,7 @@ import com.bobbyesp.valapi.library.data.local.database.entity.SeasonEntity
 import com.bobbyesp.valapi.library.data.local.database.entity.SkinLevelEntity
 import com.bobbyesp.valapi.library.data.local.database.entity.SprayEntity
 import com.bobbyesp.valapi.library.data.local.database.entity.SprayLevelEntity
-import com.bobbyesp.valapi.library.data.local.database.entity.SprayLevelEntityTypeConverters
+import com.bobbyesp.valapi.library.converters.SprayLevelEntityTypeConverters
 import com.bobbyesp.valapi.library.data.local.database.entity.ThemeEntity
 import com.bobbyesp.valapi.library.data.local.database.entity.VersionEntity
 import com.bobbyesp.valapi.library.data.local.database.entity.WeaponEntity
@@ -40,17 +40,17 @@ import com.bobbyesp.valapi.library.domain.model.agent.AbilityTypeConverter
 import com.bobbyesp.valapi.library.domain.model.agent.RoleTypeConverters
 import com.bobbyesp.valapi.library.domain.model.agent.VoiceLineTypeConverter
 import com.bobbyesp.valapi.library.domain.model.buddies.levels.BuddyLevelTypeConverters
-import com.bobbyesp.valapi.library.domain.model.gamemodes.GameFeatureOverrideTypeConverters
-import com.bobbyesp.valapi.library.domain.model.gamemodes.GameRuleBoolOverrideTypeConverters
-import com.bobbyesp.valapi.library.domain.model.gear.GearTypeConverters
-import com.bobbyesp.valapi.library.domain.model.gear.ShopDataTypeConverters
-import com.bobbyesp.valapi.library.domain.model.maps.CalloutTypeConverters
-import com.bobbyesp.valapi.library.domain.model.seasons.competitive.BorderTypeConverters
-import com.bobbyesp.valapi.library.domain.model.weapons.SkinLevelTypeConverters
-import com.bobbyesp.valapi.library.domain.model.weapons.WeaponStatsTypeConverters
-import com.bobbyesp.valapi.library.domain.model.weapons.skins.WeaponSkinTypeConverters
-import com.bobbyesp.valapi.library.domain.model.weapons.skins.chromas.ChromaTypeConverters
-
+import com.bobbyesp.valapi.library.converters.GameFeatureOverrideTypeConverters
+import com.bobbyesp.valapi.library.converters.GameRuleBoolOverrideTypeConverters
+import com.bobbyesp.valapi.library.converters.GearTypeConverters
+import com.bobbyesp.valapi.library.converters.ShopDataTypeConverters
+import com.bobbyesp.valapi.library.converters.CalloutTypeConverters
+import com.bobbyesp.valapi.library.converters.BorderTypeConverters
+import com.bobbyesp.valapi.library.converters.SkinLevelTypeConverters
+import com.bobbyesp.valapi.library.converters.WeaponStatsTypeConverters
+import com.bobbyesp.valapi.library.converters.WeaponSkinTypeConverters
+import com.bobbyesp.valapi.library.converters.ChromaTypeConverters
+import com.bobbyesp.valapi.library.converters.RecruitmentDataTypeConverters
 @Database(
     entities = [
         AgentEntity::class,
@@ -103,7 +103,8 @@ import com.bobbyesp.valapi.library.domain.model.weapons.skins.chromas.ChromaType
     ChromaTypeConverters::class,
     CalloutTypeConverters::class,
     BorderTypeConverters::class,
-    SkinLevelTypeConverters::class
+    SkinLevelTypeConverters::class,
+    RecruitmentDataTypeConverters::class
 )
 abstract class ValAPILibraryDb : RoomDatabase() {
     abstract fun agentDao(): AgentDao

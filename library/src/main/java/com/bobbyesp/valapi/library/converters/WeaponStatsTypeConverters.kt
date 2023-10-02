@@ -1,6 +1,7 @@
-package com.bobbyesp.valapi.library.domain.model.weapons;
+package com.bobbyesp.valapi.library.converters;
 
 import androidx.room.TypeConverter
+import com.bobbyesp.valapi.library.domain.model.weapons.WeaponStats
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
 
@@ -11,22 +12,22 @@ class WeaponStatsTypeConverters {
     };
 
     @TypeConverter
-    fun fromJson(jsonString: String): com.bobbyesp.valapi.library.domain.model.weapons.WeaponStats {
+    fun fromJson(jsonString: String): WeaponStats {
         return json.decodeFromString(jsonString);
     }
 
     @TypeConverter
-    fun toJson(value: com.bobbyesp.valapi.library.domain.model.weapons.WeaponStats): String {
+    fun toJson(value: WeaponStats): String {
         return json.encodeToString(value);
     }
 
     @TypeConverter
-    fun fromJsonList(jsonString: String): List<com.bobbyesp.valapi.library.domain.model.weapons.WeaponStats> {
+    fun fromJsonList(jsonString: String): List<WeaponStats> {
         return json.decodeFromString(jsonString);
     }
 
     @TypeConverter
-    fun toJsonList(value: List<com.bobbyesp.valapi.library.domain.model.weapons.WeaponStats>): String {
+    fun toJsonList(value: List<WeaponStats>): String {
         return json.encodeToString(value);
     }
 }

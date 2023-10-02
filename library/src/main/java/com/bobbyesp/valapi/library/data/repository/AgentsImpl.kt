@@ -39,6 +39,7 @@ class AgentsImpl @Inject constructor(
                 }
                 emit(Resource.Success(response.data))
             } catch (e: Throwable) {
+                Log.e("AgentsImpl", "getAgents: $e")
                 emit(Resource.Error(e.localizedMessage ?: e.stackTraceToString()))
             }
         }
